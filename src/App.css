@@ -1,6 +1,12 @@
 :root {
   --background-color: blue;
   --button-background-color: red;
+  --menu-background-color: rgb(191, 147, 147);
+  --border-color: brown;
+  --cn: 'Courier New', Courier, monospace;
+  --mega: 30px;
+  --medium: 20px;
+  --mild: 15px;
 }
 
 .App {
@@ -40,4 +46,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.mainmenu {
+  font-family: var(--cn);
+  font-size: var(--mega);
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 10%;
+  background-color: var(--menu-background-color);
+  height: 300px;
+  padding: 10px;
+  border: 5px solid var(--border-color);
+  border-radius: 10%;
+}
+
+.menubutton {
+  padding: 10px;
+  border: 5px solid var(--border-color);
+  background-color: var(--background-color);
+  border-radius: 10%;
+}
+
+.navdiv {
+  background-color: purple;
+}
+
+.navtext {
+  background-color: blue;
+
+}
+
+.navlink {
+  background-color: green;
+
 }
