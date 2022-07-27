@@ -4,7 +4,7 @@ import {useState, useEffect} from "react"
 const Navbar = () => {
 
   return (
-    <nav className="navdiv">
+    <div className="header">
       {/* <a className="navtext" href="/">
         Link
       </a> */}
@@ -12,7 +12,7 @@ const Navbar = () => {
       {/* <a className="navlink" href="/">
         Link
       </a> */}
-    </nav>
+    </div>
   );
 };
 

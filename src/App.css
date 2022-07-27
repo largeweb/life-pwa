@@ -70,8 +70,26 @@
   border-radius: 10%;
 }
 
-.navdiv {
-  /* background-color: purple; */
+.header {
+  background-color: purple;
+  border-radius: 20%;
+  opacity: 25%;
+  position: fixed;
+  left: 35%;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  width: 30%;
+
+}
+
+.header:hover {
+  background-color: purple;
+  font-size: var(--mega);
+  left: 25%;
+  width: 50%;
+  opacity: 100%;
+  transition: 500ms;
 }
 
 .navtext {
@@ -104,3 +122,7 @@ html {
   border: 5px solid var(--border-color);
   border-radius: 10%;
 }
+
+/* .spanicon::hover {
+  ;
+} */
