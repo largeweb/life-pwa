@@ -18,17 +18,17 @@ function Exercise() {
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
 
   // 💪💪💪 EXERCISES 💪💪💪
-  const [miles,setMiles] = useLocalStorage('milescount',0)
+  const [miles,setMiles] = useLocalStorage('milecount',0)
   const [pushups, setPushups] = useLocalStorage('pushupcount',0)
   const [pullups, setPullups] = useLocalStorage('pullupcount',0)
-  const [squats,setSquats] = useLocalStorage('pullupcount',0)
-  const [core,setCore] = useLocalStorage('pullupcount',0)
-  const [armcircles,setArmcircles] = useLocalStorage('armcirclescount',0)
-  const [situps,setSitups] = useLocalStorage('situpscount',0)
-  const [lunges,setLunges] = useLocalStorage('lungescount',0)
-  const [butterflys,setButterflys] = useLocalStorage('butterflyscount',0)
+  const [squats,setSquats] = useLocalStorage('squatcount',0)
+  const [core,setCore] = useLocalStorage('corecount',0)
+  const [armcircles,setArmcircles] = useLocalStorage('armcirclecount',0)
+  const [situps,setSitups] = useLocalStorage('situpcount',0)
+  const [lunges,setLunges] = useLocalStorage('lungecount',0)
+  const [butterflys,setButterflys] = useLocalStorage('butterflycount',0)
   const [mountainClimbers,setMountainClimbers] = useLocalStorage('mountainClimberscount',0)
-  const [flys,setFlys] = useLocalStorage('flyscount',0)
+  const [flys,setFlys] = useLocalStorage('flycount',0)
 
   const [locked, setLocked] = useLocalStorage('lockedbool',true)
 
