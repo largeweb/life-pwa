@@ -19,18 +19,32 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <div className='mainmenu'>
-        <input
-          type="text"
-          placeholder="Enter your message!"
-          value={userInput}
-          className='inputfield'
-          onChange={(e) => setUserInput(e.target.value)} />
-        <div>{userInput}</div>
-        <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
+      {/* <Navbar /> */}
+      <div>
+        <div className='mainmenu'>
+          <input
+            type="text"
+            placeholder="Enter your message!"
+            value={userInput}
+            className='inputfield'
+            onChange={(e) => setUserInput(e.target.value)} />
+          <div>{userInput}</div>
+          <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
+        </div>
       </div>
-      <div className='footer'><Footer /></div>
+      <div>
+        <div className='mainmenu'>
+          <input
+            type="text"
+            placeholder="Enter your message!"
+            value={userInput}
+            className='inputfield'
+            onChange={(e) => setUserInput(e.target.value)} />
+          <div>{userInput}</div>
+          <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
+        </div>
+      </div>
+      {/* <div className='footer'><Footer /></div> */}
     </div>
   );
 }

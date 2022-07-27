@@ -20,24 +20,34 @@ function Exercise() {
   // 💪💪💪 EXERCISES 💪💪💪
   const [pushups, setPushups] = useLocalStorage('pushupcount',0)
   const [pullups, setPullups] = useLocalStorage('pullupcount',0)
-  const [locked, setLocked] = useLocalStorage('lockedbool',false)
+  const [locked, setLocked] = useLocalStorage('lockedbool',true)
 
   return (
     <div className="App">
       <Navbar />
       <div className='mainmenu'>
-        <h1>EXERCISE PAGE</h1>
+        <h1>EXERCISE 💪</h1>
         <Link to={'/'}><button className='menubutton'>Back Home</button></Link>
         <div>{userInput}</div>
         {pushups > 0
-          ? <div>magical button</div>
-          : <div>less magical button</div>
+          ? <div style={{border:"5px solid gray", background:"cyan"}} value={pushups} onClick={(e) => setPushups(parseInt(pushups)-parseInt(10))}>PUSHUPS ✖️ [ -10 ] ✖️ {pushups}</div>
+          : <div />
         }
-        <div>{pushups}</div>
+        {pullups > 0
+          ? <div style={{border:"5px solid gray", background:"cyan"}} value={pullups} onClick={(e) => setPullups(parseInt(pullups)-parseInt(5))}>PULLUPS ✖️ [ -5 ] ✖️ {pullups}</div>
+          : <div />
+        }
         <hr></hr>
-        <div><div onClick={(e) => setLocked(false)}>add pushups</div></div>
+        {/* <div><div onClick={(e) => setLocked(false)}>add pushups</div></div> */}
+
+        {locked=="true"
+          ? <div><div style={{border:"10px solid blue"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>show elements</div></div>
+          : <div><div style={{border:"10px solid blue"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>hide elements</div></div>
+        }
+        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={pushups} onClick={(e) => setPushups(parseInt(pushups)+parseInt(10))}>add pushups</div></div>
+        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={pullups} onClick={(e) => setPullups(parseInt(pullups)+parseInt(10))}>add pullups</div></div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
