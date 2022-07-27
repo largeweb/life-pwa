@@ -2,9 +2,10 @@
   --background-color: rgb(185, 185, 227);
   --button-background-color: rgb(208, 246, 206);
   --menu-background-color: rgb(191, 147, 147);
-  --footer-color: rgb(126, 154, 254);
+  --footer-color: rgb(255, 255, 255);
   --border-color: rgb(124, 99, 99);
   --cn: 'Courier New', Courier, monospace;
+  --ultra: 60px;
   --mega: 30px;
   --medium: 20px;
   --mild: 15px;
@@ -124,7 +125,7 @@ html {
 .footer:hover {
   background-color: var(--footer-color);
   border-radius: 25%;
-  font-size: var(--mega);
+  font-size: var(--ultra);
   left: 20%;
   width: 60%;
   opacity: 60%;
@@ -143,6 +144,14 @@ html {
   /* transition: 250ms; */
 /* } */
 
-.spanicon {
+.spanicon:hover {
   margin: 3%;
+  /* opacity: 100%; */
+  transition: 250ms;
+}
+
+.spanicon {
+  margin: 0;
+  /* opacity: 100%; */
+  transition: 250ms;
 }
