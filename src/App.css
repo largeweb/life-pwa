@@ -83,14 +83,6 @@
 
 }
 
-.header:hover {
-  background-color: purple;
-  font-size: var(--mega);
-  left: 25%;
-  width: 50%;
-  opacity: 100%;
-  transition: 500ms;
-}
 
 .navtext {
   background-color: blue;
@@ -103,17 +95,33 @@
 
 html {
   /* background-color: var(--background-color); */
-  /* border: 5px solid black; */
+  border: 10px solid black;
   background-color: black;
 }
 
 .footer {
-  /* background-color: var(--footer-color); */
+  background-color: var(--footer-color);
   position: fixed;
-  left: 0;
   bottom: 0;
   right: 0;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  /* background-color: purple; */
+  border-radius: 20%;
+  opacity: 30%;
+  position: fixed;
+  left: 35%;
+  /* margin-top: 10px; */
+  width: 30%;
+  transition: 500ms;
+}
+
+.footer:hover {
+  background-color: purple;
+  font-size: var(--mega);
+  left: 25%;
+  width: 50%;
+  opacity: 60%;
+  transition: 500ms;
 }
 
 .inputfield {
