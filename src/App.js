@@ -21,13 +21,14 @@ function App() {
     <div className="App">
       <Navbar />
       <div className='mainmenu'>
-        <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
         <input
           type="text"
           placeholder="Enter your message!"
           value={userInput}
+          className='inputfield'
           onChange={(e) => setUserInput(e.target.value)} />
         <div>{userInput}</div>
+        <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
       </div>
       <div className='footer'><Footer /></div>
     </div>

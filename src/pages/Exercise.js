@@ -17,6 +17,11 @@ function Exercise() {
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
 
+  // 💪💪💪 EXERCISES 💪💪💪
+  const [pushups, setPushups] = useLocalStorage('pushupcount',0)
+  const [pullups, setPullups] = useLocalStorage('pullupcount',0)
+  const [locked, setLocked] = useLocalStorage('lockedbool',false)
+
   return (
     <div className="App">
       <Navbar />
@@ -24,6 +29,13 @@ function Exercise() {
         <h1>EXERCISE PAGE</h1>
         <Link to={'/'}><button className='menubutton'>Back Home</button></Link>
         <div>{userInput}</div>
+        {pushups > 0
+          ? <div>magical button</div>
+          : <div>less magical button</div>
+        }
+        <div>{pushups}</div>
+        <hr></hr>
+        <div><div onClick={(e) => setLocked(false)}>add pushups</div></div>
       </div>
       <Footer />
     </div>
