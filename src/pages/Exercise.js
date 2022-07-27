@@ -32,6 +32,20 @@ function Exercise() {
 
   const [locked, setLocked] = useLocalStorage('lockedbool',true)
 
+  const setAllExerciseToZero = async () => {
+    setMiles(0)
+    setPushups(0)
+    setPullups(0)
+    setSquats(0)
+    setCore(0)
+    setArmcircles(0)
+    setSitups(0)
+    setLunges(0)
+    setButterflys(0)
+    setMountainClimbers(0)
+    setFlys(0)
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -92,10 +106,6 @@ function Exercise() {
         <hr></hr>
         {/* <div><div onClick={(e) => setLocked(false)}>add pushups</div></div> */}
 
-        {locked=="true"
-        ? <div><div style={{border:"5px solid black", fontSize:"10px", width:"30%", marginLeft:"35%"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode On<br></br>🔒</div></div>
-        : <div><div style={{border:"10px solid blue"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode Off</div></div>
-        }
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={miles} onClick={(e) => setMiles(parseInt(miles)+parseInt(5))}>add miles</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={pushups} onClick={(e) => setPushups(parseInt(pushups)+parseInt(10))}>add pushups</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={pullups} onClick={(e) => setPullups(parseInt(pullups)+parseInt(5))}>add pullups</div></div>
@@ -107,6 +117,14 @@ function Exercise() {
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={butterflys} onClick={(e) => setButterflys(parseInt(butterflys)+parseInt(5))}>add butterflys</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={mountainClimbers} onClick={(e) => setMountainClimbers(parseInt(mountainClimbers)+parseInt(5))}>add mountainClimbers</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={flys} onClick={(e) => setFlys(parseInt(flys)+parseInt(5))}>add flys</div></div>
+        {locked=="true"
+        ? <div><div style={{border:"5px solid black", fontSize:"10px", width:"30%", marginLeft:"35%"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode On<br></br>🔒</div></div>
+        : <div><div style={{border:"10px solid blue"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode Off</div></div>
+        }
+        {locked=="true"
+        ? <div />
+        : <div><div style={{border:"10px solid blue"}} value={locked} onClick={(e) => setAllExerciseToZero()}>Reset All</div></div>
+        }
       </div>
       {/* <Footer /> */}
     </div>
