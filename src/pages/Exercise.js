@@ -87,7 +87,7 @@ function Exercise() {
         {/* <div><div onClick={(e) => setLocked(false)}>add pushups</div></div> */}
 
         {locked=="true"
-          ? <div><div style={{border:"10px solid blue"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode On<br></br>🔒</div></div>
+          ? <div><div style={{border:"5px solid black", fontSize:"10px", width:"10%", marginLeft:"45%"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode On<br></br>🔒</div></div>
           : <div><div style={{border:"10px solid blue"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exericse Mode Off</div></div>
         }
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={pushups} onClick={(e) => setPushups(parseInt(pushups)+parseInt(10))}>add pushups</div></div>
