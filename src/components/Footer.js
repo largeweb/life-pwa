@@ -1,5 +1,6 @@
 import React from "react";
 import {useState, useEffect} from "react"
+import {Link} from "react-router-dom"
 
 const Footer = () => {
 
@@ -12,12 +13,12 @@ const Footer = () => {
         Link
       </a> */}
       <div style={{textAlign: "center", padding: "10px"}}>
-          <span className="spanicon">🍓</span>
-            <span className="spanicon">🌟</span>
-            <span className="spanicon">🍌</span>
-            <span className="spanicon">🌊</span>
-            <span className="spanicon">🏘️</span>
-            <span className="spanicon">🎪</span>
+            <Link to={'/'}><span className="spanicon">🍓</span></Link>
+            <Link to={'/'}><span className="spanicon">🌟</span></Link>
+            <Link to={'/'}><span className="spanicon">🍌</span></Link>
+            <Link to={'/'}><span className="spanicon">🌊</span></Link>
+            <Link to={'/'}><span className="spanicon">🏘️</span></Link>
+            <Link to={'/'}><span className="spanicon">🎪</span></Link>
         </div>
     </div>
   );
