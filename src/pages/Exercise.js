@@ -96,13 +96,14 @@ function Exercise() {
         ? <div><div style={{border:"5px solid black", fontSize:"10px", width:"30%", marginLeft:"35%"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode On<br></br>🔒</div></div>
         : <div><div style={{border:"10px solid blue"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode Off</div></div>
         }
+        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={miles} onClick={(e) => setMiles(parseInt(miles)+parseInt(5))}>add miles</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={pushups} onClick={(e) => setPushups(parseInt(pushups)+parseInt(10))}>add pushups</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={pullups} onClick={(e) => setPullups(parseInt(pullups)+parseInt(5))}>add pullups</div></div>
-        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={squats} onClick={(e) => setSquats(parseInt(squats)+parseInt(5))}>add squats</div></div>
-        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={core} onClick={(e) => setCore(parseInt(core)+parseInt(5))}>add core</div></div>
-        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={armcircles} onClick={(e) => setArmcircles(parseInt(armcircles)+parseInt(5))}>add armcircles</div></div>
-        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={situps} onClick={(e) => setSitups(parseInt(situps)+parseInt(5))}>add situps</div></div>
-        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={lunges} onClick={(e) => setLunges(parseInt(lunges)+parseInt(5))}>add lunges</div></div>
+        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={squats} onClick={(e) => setSquats(parseInt(squats)+parseInt(30))}>add squats</div></div>
+        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={core} onClick={(e) => setCore(parseInt(core)+parseInt(20))}>add core</div></div>
+        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={armcircles} onClick={(e) => setArmcircles(parseInt(armcircles)+parseInt(25))}>add armcircles</div></div>
+        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={situps} onClick={(e) => setSitups(parseInt(situps)+parseInt(25))}>add situps</div></div>
+        <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={lunges} onClick={(e) => setLunges(parseInt(lunges)+parseInt(10))}>add lunges</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={butterflys} onClick={(e) => setButterflys(parseInt(butterflys)+parseInt(5))}>add butterflys</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={mountainClimbers} onClick={(e) => setMountainClimbers(parseInt(mountainClimbers)+parseInt(5))}>add mountainClimbers</div></div>
         <div><div style={{border:"5px solid gray"}} hidden={locked=="true"} value={flys} onClick={(e) => setFlys(parseInt(flys)+parseInt(5))}>add flys</div></div>
