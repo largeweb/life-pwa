@@ -5,12 +5,13 @@ const Navbar = () => {
 
   return (
     <nav className="navdiv">
-      <a className="navtext" href="/">
+      {/* <a className="navtext" href="/">
         Link
-      </a>
-      <a className="navlink" href="/">
+      </a> */}
+      <div style={{textAlign: "center", padding: "10px"}}>🍓 🌟 🍌 🌊 🏘️ 🎪</div>
+      {/* <a className="navlink" href="/">
         Link
-      </a>
+      </a> */}
     </nav>
   );
 };
