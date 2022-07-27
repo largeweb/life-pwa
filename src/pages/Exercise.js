@@ -64,7 +64,7 @@ function Exercise() {
           : <div />
         }
         {mountainClimbers > 0
-          ? <div style={{border:"5px solid gray", background:"cyan"}} value={mountainClimbers} onClick={(e) => setArmcircles(parseInt(mountainClimbers)-parseInt(20))}>MOUNTAIN CLIMBERS ✖️ [ -20 ] ✖️ {mountainClimbers}</div>
+          ? <div style={{border:"5px solid gray", background:"cyan"}} value={mountainClimbers} onClick={(e) => setMountainClimbers(parseInt(mountainClimbers)-parseInt(20))}>MOUNTAIN CLIMBERS ✖️ [ -20 ] ✖️ {mountainClimbers}</div>
           : <div />
         }
         {situps > 0
