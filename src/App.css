@@ -102,7 +102,7 @@ html {
 .footer {
   background-color: var(--footer-color);
   position: fixed;
-  bottom: 0;
+  bottom: 30px;
   right: 0;
   /* margin-bottom: 10px; */
   /* background-color: purple; */
@@ -118,8 +118,8 @@ html {
 .footer:hover {
   background-color: purple;
   font-size: var(--mega);
-  left: 25%;
-  width: 50%;
+  left: 20%;
+  width: 60%;
   opacity: 60%;
   transition: 500ms;
 }
@@ -131,6 +131,7 @@ html {
   border-radius: 10%;
 }
 
-/* .spanicon::hover {
-  ;
-} */
+.spanicon:hover {
+  border: 10px solid var(--border-color);
+  transition: 250ms;
+}
