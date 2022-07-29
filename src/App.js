@@ -28,20 +28,14 @@ function App() {
             value={userInput}
             className='inputfield'
             onChange={(e) => setUserInput(e.target.value)} />
-          <div>{userInput}</div>
-          <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
+          {/* <div>{userInput}</div> */}
         </div>
       </div>
       <div>
         <div className='mainmenu'>
-          <input
-            type="text"
-            placeholder="Enter your message!"
-            value={userInput}
-            className='inputfield'
-            onChange={(e) => setUserInput(e.target.value)} />
           <div>{userInput}</div>
           <Link to={'/play'}><button className='menubutton'>Play Area</button></Link>
+          <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
         </div>
       </div>
       {/* <div className='footer'><Footer /></div> */}
