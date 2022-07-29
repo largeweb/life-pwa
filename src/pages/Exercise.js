@@ -60,47 +60,47 @@ function Exercise() {
         : <div>{userInput}</div>
         }
         {miles > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={miles} onClick={(e) => setMiles(parseInt(miles)-parseInt(5))}>MILES ✖️ [ -0.5 ] ✖️ {parseInt(miles)/parseInt(10)}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={miles} onClick={(e) => setMiles(parseInt(miles)-parseInt(5))}>MILES ✖️ [ -0.5 ] ✖️ {parseInt(miles)/parseInt(10)}</div>
         : <div />
         }
         {pushups > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={pushups} onClick={(e) => setPushups(parseInt(pushups)-parseInt(10))}>PUSHUPS ✖️ [ -10 ] ✖️ {pushups}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={pushups} onClick={(e) => setPushups(parseInt(pushups)-parseInt(10))}>PUSHUPS ✖️ [ -10 ] ✖️ {pushups}</div>
         : <div />
         }
         {pullups > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={pullups} onClick={(e) => setPullups(parseInt(pullups)-parseInt(5))}>PULLUPS ✖️ [ -5 ] ✖️ {pullups}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={pullups} onClick={(e) => setPullups(parseInt(pullups)-parseInt(5))}>PULLUPS ✖️ [ -5 ] ✖️ {pullups}</div>
         : <div />
         }
         {squats > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={squats} onClick={(e) => setSquats(parseInt(squats)-parseInt(30))}>SQUATS ✖️ [ -30 ] ✖️ {squats}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={squats} onClick={(e) => setSquats(parseInt(squats)-parseInt(30))}>SQUATS ✖️ [ -30 ] ✖️ {squats}</div>
         : <div />
         }
         {core > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={core} onClick={(e) => setCore(parseInt(core)-parseInt(20))}>CORE ✖️ [ -20 ] ✖️ {core}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={core} onClick={(e) => setCore(parseInt(core)-parseInt(20))}>CORE ✖️ [ -20 ] ✖️ {core}</div>
         : <div />
         }
         {armcircles > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={armcircles} onClick={(e) => setArmcircles(parseInt(armcircles)-parseInt(25))}>ARMCIRCLES ✖️ [ -25 ] ✖️ {armcircles}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={armcircles} onClick={(e) => setArmcircles(parseInt(armcircles)-parseInt(25))}>ARMCIRCLES ✖️ [ -25 ] ✖️ {armcircles}</div>
         : <div />
         }
         {mountainClimbers > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={mountainClimbers} onClick={(e) => setMountainClimbers(parseInt(mountainClimbers)-parseInt(20))}>MOUNTAIN CLIMBERS ✖️ [ -20 ] ✖️ {mountainClimbers}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={mountainClimbers} onClick={(e) => setMountainClimbers(parseInt(mountainClimbers)-parseInt(20))}>MOUNTAIN CLIMBERS ✖️ [ -20 ] ✖️ {mountainClimbers}</div>
         : <div />
         }
         {situps > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={situps} onClick={(e) => setSitups(parseInt(situps)-parseInt(25))}>SITUPS ✖️ [ -25 ] ✖️ {situps}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={situps} onClick={(e) => setSitups(parseInt(situps)-parseInt(25))}>SITUPS ✖️ [ -25 ] ✖️ {situps}</div>
         : <div />
         }
         {lunges > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={lunges} onClick={(e) => setLunges(parseInt(lunges)-parseInt(10))}>LUNGES ✖️ [ -10 ] ✖️ {lunges}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={lunges} onClick={(e) => setLunges(parseInt(lunges)-parseInt(10))}>LUNGES ✖️ [ -10 ] ✖️ {lunges}</div>
         : <div />
         }
         {butterflys > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={butterflys} onClick={(e) => setButterflys(parseInt(butterflys)-parseInt(5))}>BUTTERFLYS ✖️ [ -5 ] ✖️ {butterflys}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={butterflys} onClick={(e) => setButterflys(parseInt(butterflys)-parseInt(5))}>BUTTERFLYS ✖️ [ -5 ] ✖️ {butterflys}</div>
         : <div />
         }
         {flys > 0
-        ? <button style={{border:"5px solid gray", background:"cyan"}} value={flys} onClick={(e) => setFlys(parseInt(flys)-parseInt(10))}>30LB. WEIGHTED FLYS ✖️ [ -10 ] ✖️ {flys}</button>
+        ? <div style={{border:"5px solid gray", background:"cyan"}} value={flys} onClick={(e) => setFlys(parseInt(flys)-parseInt(10))}>30LB. WEIGHTED FLYS ✖️ [ -10 ] ✖️ {flys}</div>
         : <div />
         }
         <hr></hr>
