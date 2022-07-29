@@ -41,7 +41,7 @@ function App() {
             className='inputfield'
             onChange={(e) => setUserInput(e.target.value)} />
           <div>{userInput}</div>
-          <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
+          <Link to={'/play'}><button className='menubutton'>Play Area</button></Link>
         </div>
       </div>
       {/* <div className='footer'><Footer /></div> */}

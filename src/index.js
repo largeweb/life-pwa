@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import App from './App';
 import Exercise from './pages/Exercise';
+import PlayPage from './pages/PlayPage';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
@@ -14,6 +15,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App/>} />
         <Route path="/exercise" element={<Exercise/>} />
+        <Route path="/play" element={<PlayPage/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
