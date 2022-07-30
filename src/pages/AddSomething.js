@@ -16,7 +16,7 @@ import useLocalStorage from "react-use-localstorage"
 function AddSomething() {
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
-  const [addInput, setAddInput] = useLocalStorage('')
+  const [addInput, setAddInput] = useState('')
 
   return (
     <div className="App">
