@@ -6,6 +6,7 @@ import App from './App';
 import Exercise from './pages/Exercise';
 import PlayPage from './pages/PlayPage';
 import TicTacToe from './pages/TicTacToe';
+import AddSomething from './pages/AddSomething';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
@@ -18,6 +19,7 @@ root.render(
         <Route path="/exercise" element={<Exercise/>} />
         <Route path="/play" element={<PlayPage/>} />
         <Route path="/tictactoe" element={<TicTacToe/>} />
+        <Route path="/add" element={<AddSomething/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

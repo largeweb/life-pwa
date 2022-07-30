@@ -80,7 +80,7 @@ function TicTacToe() {
       <div className='mainmenu'>
         <h1> <span style={{fontSize:"40px", fontWeight:"700"}}>Tic</span> <span style={{fontSize:"30px", fontWeight:"700"}}>Tac</span> <span style={{fontSize:"22px", fontWeight:"700"}}>Toe</span></h1>
         <h1>⭕❌⭕❌⭕❌</h1>
-        <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
+        <Link to={'/play'}><button className='menubutton' >Back Play</button></Link>
         <table>
           <tr>
             <td style={{borderRight:"5px solid black", borderBottom:"5px solid black"}}>{placement.m1}</td>
@@ -99,7 +99,7 @@ function TicTacToe() {
           </tr>
         </table>
         <div>{userInput}</div>
-        <button className='menubutton' onClick={(e) => setInput('test')}>Tic Tac Toe</button>
+        <button className='menubutton' onClick={(e) => setInput('test')}>Tic Tac Test</button>
       </div>
       {/* <Footer /> */}
     </div>

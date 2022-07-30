@@ -36,6 +36,7 @@ function App() {
           <div>{userInput}</div>
           <Link to={'/play'}><button className='menubutton'>Play Area</button></Link>
           <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
+          <Link to={'/add'}><button className='menubutton'>Add Something</button></Link>
         </div>
       </div>
       {/* <div className='footer'><Footer /></div> */}
