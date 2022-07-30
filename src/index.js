@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import Exercise from './pages/Exercise';
 import PlayPage from './pages/PlayPage';
+import TicTacToe from './pages/TicTacToe';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
@@ -16,6 +17,7 @@ root.render(
         <Route path="/" element={<App/>} />
         <Route path="/exercise" element={<Exercise/>} />
         <Route path="/play" element={<PlayPage/>} />
+        <Route path="/tictactoe" element={<TicTacToe/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
