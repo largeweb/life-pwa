@@ -4,6 +4,7 @@
   --menu-background-color: rgb(191, 147, 147);
   --footer-color: rgb(255, 255, 255);
   --border-color: rgb(124, 99, 99);
+  --exercise-button-color: rgb(13, 166, 176);
   --cn: 'Courier New', Courier, monospace;
   --ultra: 60px;
   --mega: 30px;
@@ -155,4 +156,10 @@ html {
   margin: 0;
   /* opacity: 100%; */
   transition: 250ms;
+}
+
+.exerciseBtn {
+  font-size: 20px;
+  background-color: var(--exercise-button-color);
+  border: 5px solid var(--border-color)
 }
