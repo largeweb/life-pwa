@@ -58,7 +58,7 @@ function Exercise() {
         <hr></hr>
         {/* <div><div onClick={(e) => setLocked(false)}>add pushups</div></div> */}
 
-        <div><button className='exerciseBtn' hidden={locked=="true"} value={miles} onClick={(e) => setMiles(parseInt(miles)+parseInt(5))}>add miles {miles}</button></div>
+        <div><button className='exerciseBtn' hidden={locked=="true"} value={miles} onClick={(e) => setMiles(parseInt(miles)+parseInt(5))}>add miles 0.{miles}</button></div>
         <div><button className='exerciseBtn' hidden={locked=="true"} value={pushups} onClick={(e) => setPushups(parseInt(pushups)+parseInt(10))}>add pushups {pushups}</button></div>
         <div><button className='exerciseBtn' hidden={locked=="true"} value={pullups} onClick={(e) => setPullups(parseInt(pullups)+parseInt(5))}>add pullups {pullups}</button></div>
         <div><button className='exerciseBtn' hidden={locked=="true"} value={squats} onClick={(e) => setSquats(parseInt(squats)+parseInt(30))}>add squats {squats}</button></div>
