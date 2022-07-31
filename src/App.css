@@ -161,5 +161,8 @@ html {
 .exerciseBtn {
   font-size: 20px;
   background-color: var(--exercise-button-color);
-  border: 5px solid var(--border-color)
+  border: 5px solid var(--border-color);
+  padding: 10px;
+  width: 80%;
+  margin: 0;
 }
