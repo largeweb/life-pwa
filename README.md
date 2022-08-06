@@ -1,2 +1,2 @@
 # life-pwa
-life pwa app private
+progressive web app i am using daily for my todos and whatnot
