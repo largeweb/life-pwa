@@ -29,6 +29,7 @@ app.use(cors())
 
 // 🌟 CHANGE THIS ROUTE ON SERVER 🌟
 app.get('/life', (req, res) => {
+  res.header('Access-Control-Allow-Methods', 'GET');
 	// const reject = () => {
 	// 	res.setHeader('www-authenticate', 'Basic')
 	// 	res.sendStatus(401)
@@ -43,7 +44,7 @@ app.get('/life', (req, res) => {
 	// }
 	// res.sendFile('/home/matt/life/summer/todo.txt');
 
-  var array = fs.readFileSync('/home/life/summer/todo.txt').toString().split("\n");
+  var array = fs.readFileSync('/home/matt/life/summer/todo.txt').toString().split("\n");
   var todoJson = {}
   todoJson.lines = []
   for(i in array) {
