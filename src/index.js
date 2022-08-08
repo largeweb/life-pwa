@@ -9,6 +9,7 @@ import TicTacToe from './pages/TicTacToe';
 import AddSomething from './pages/AddSomething';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import ViewLife from './pages/ViewLife';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path="/play" element={<PlayPage/>} />
         <Route path="/tictactoe" element={<TicTacToe/>} />
         <Route path="/add" element={<AddSomething/>} />
+        <Route path="/view" element={<ViewLife/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
