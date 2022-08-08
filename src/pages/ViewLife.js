@@ -15,13 +15,11 @@ function ViewLife() {
   const [fileInput, setFileInput] = useState('todo')
 
   useEffect(() => {
-    showFile(fileInput)
+    showFile()
   }, [fileInput])
 
   const showFile = async (e, file) => {
-    const lifeFilePath = process.env.REACT_APP_LIFE_DIR + file
-    console.log("LIFE DIR IS: " + lifeFilePath)
-    e.preventDefault()
+    const lifeFilePath = process.env.REACT_APP_LIFE_DIR.concat(fileInput)
     const reader = new FileReader()
     reader.onload = async (e) => {
       const text = (e.target.result)
