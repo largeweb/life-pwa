@@ -22,7 +22,7 @@ function ViewLife() {
     const lifeFilePath = process.env.REACT_APP_LIFE_DIR.concat(fileInput)
     const reader = new FileReader()
     reader.onload = async (e) => {
-      const text = (e.target.result)
+      const text = (lifeFilePath)
       console.log(text)
       alert(text)
     };
