@@ -39,6 +39,8 @@ function ViewLife() {
         {/* <button className='menubutton' onClick={(e) => setAddInput('todo')}>TODO</button> */}
         <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
         <button className='menubutton' >View {process.env.REACT_APP_LIFE_DIR}{fileInput}</button>
+        <Link to={'localhost:5000/pull-life'}><button className='menubutton' >PULL CHANGES</button></Link>
+        <Link to={'localhost:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link>
         <div>{userInput}</div>
       </div>
       {/* <Footer /> */}
