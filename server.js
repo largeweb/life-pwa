@@ -6,6 +6,7 @@ const path = require('path');
 const exec = require('child_process').exec;
 const { urlencoded } = require('express');
 const multer = require("multer");
+const cors = require("cors");
 const upload = multer();
 
 const lifePath = "/home/life"
@@ -23,6 +24,7 @@ app.get('/', (req, res) => { //Line 9
 app.use("/life", express.static(lifePath))
 app.use(urlencoded({extended: true}))
 app.use(upload.array())
+app.use(cors())
 
 
 // 🌟 CHANGE THIS ROUTE ON SERVER 🌟

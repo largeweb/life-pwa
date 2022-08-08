@@ -40,9 +40,9 @@ function ViewLife() {
     // const data = await response.json();
     // setFileText(data.total)
 
-    const response = await fetch('localhost:5000/life');
+    const response = await fetch('http://dev-matt.com:5000/life');
     const data = await response.json();
-    setFileText(data.lines)
+    setFileText(data.lines[2])
   }
 
   return (
