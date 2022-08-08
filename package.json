@@ -39,7 +39,7 @@
     "eject": "react-scripts eject"
   },
   "react-dotenv": {
-    "whitelist": ["API_URL"]
+    "whitelist": ["LIFE_DIR"]
   },
   "eslintConfig": {
     "extends": [
