@@ -10,6 +10,7 @@ import AddSomething from './pages/AddSomething';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import ViewLife from './pages/ViewLife';
+import fs from 'fs'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

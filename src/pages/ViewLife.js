@@ -8,26 +8,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { MDBFooter } from 'mdb-react-ui-kit';
 import {Link} from "react-router-dom";
 import useLocalStorage from "react-use-localstorage"
+import fs from "fs"
+// import reader from "any-text"
+// var reader = require('any-text')
 
 function ViewLife() {
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [fileInput, setFileInput] = useState('todo')
 
-  useEffect(() => {
-    showFile()
-  }, [fileInput])
+  // useEffect(() => {
+  //   showFile()
+  // }, [fileInput])
 
-  const showFile = async (e, file) => {
-    const lifeFilePath = process.env.REACT_APP_LIFE_DIR.concat(fileInput)
-    const reader = new FileReader()
-    reader.onload = async (e) => {
-      const text = (lifeFilePath)
-      console.log(text)
-      alert(text)
-    };
-    reader.readAsText(lifeFilePath)
-  }
+  // const showFile = async () => {
+  //   const lifeFilePath = process.env.REACT_APP_LIFE_DIR.concat(fileInput)
+  //   reader.getText(lifeFilePath)
+  //   .then((data) => {
+  //     console.log(data)
+  //   })
+  // }
 
   return (
     <div className="App">
