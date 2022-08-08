@@ -15,9 +15,9 @@ function ViewLife() {
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [fileInput, setFileInput] = useState('')
 
-  useEffect(() => {
-    showFile(fileInput)
-  }, [fileInput])
+  // useEffect(() => {
+  //   showFile(fileInput)
+  // }, [fileInput])
 
   const showFile = async (e, file) => {
     const lifeFilePath = env.LIFE_DIR
