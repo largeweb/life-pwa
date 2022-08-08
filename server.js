@@ -41,7 +41,7 @@ app.get('/life', (req, res) => {
 	// }
 	// res.sendFile('/home/matt/life/summer/todo.txt');
 
-  var array = fs.readFileSync('/home/matt/life/summer/todo.txt').toString().split("\n");
+  var array = fs.readFileSync('/home/life/summer/todo.txt').toString().split("\n");
   var todoJson = {}
   todoJson.lines = []
   for(i in array) {
