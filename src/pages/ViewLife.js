@@ -38,7 +38,7 @@ function ViewLife() {
       <div className='mainmenu'>
         <h1 style={{fontSize:"30px", fontWeight:"700"}}>💻 View 💻</h1>
         <input type="text" style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"100%", height:"200px"}} onChange={(e) => setFileInput(e.target.data)}></input>
-        <button className='menubutton' onClick={(e) => setAddInput('todo')}>TODO</button>
+        {/* <button className='menubutton' onClick={(e) => setAddInput('todo')}>TODO</button> */}
         <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
         <Link to={'/'}><button className='menubutton' >View {env.LIFE_DIR}/{fileInput}</button></Link>
         <div>{userInput}</div>
