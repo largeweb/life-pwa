@@ -8,8 +8,10 @@ const { urlencoded } = require('express');
 const multer = require("multer");
 const cors = require("cors");
 const upload = multer();
+const dotenv = require('dotenv');
+dotenv.config();
 
-const lifePath = "/home/life"
+const lifePath = process.env.REACT_APP_LIFE_DIR;
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
@@ -25,11 +27,17 @@ app.use("/life", express.static(lifePath))
 app.use(urlencoded({extended: true}))
 app.use(upload.array())
 app.use(cors())
+app.use(express.json())
+app.use(require('body-parser').json());
 
 
 // 🌟 CHANGE THIS ROUTE ON SERVER 🌟
-app.get('/life', (req, res) => {
-  res.header('Access-Control-Allow-Methods', 'GET');
+app.post('/life/', (req, res) => {
+  const filePath = path.join(lifePath.toString(), req.body.dir);
+  console.log(lifePath);
+  console.log(req.body.dir);
+  console.log("READING FROM: " + filePath);
+  res.header('Access-Control-Allow-Methods', 'POST');
 	// const reject = () => {
 	// 	res.setHeader('www-authenticate', 'Basic')
 	// 	res.sendStatus(401)
@@ -44,15 +52,16 @@ app.get('/life', (req, res) => {
 	// }
 	// res.sendFile('/home/matt/life/summer/todo.txt');
 
-  var array = fs.readFileSync('/home/life/summer/todo.txt').toString().split("\n");
+  console.log("TRYING TO READ FROM: " + lifePath + req.body.dir);
+  var array = fs.readFileSync(lifePath + req.body.dir).toString().split("\n");
   var todoJson = {}
   todoJson.lines = []
   for(i in array) {
-      console.log(array[i]);
+      // console.log(array[i]);
       // todoJson[i] = array[i];
       todoJson.lines.push(array[i]);
   }
-  todoJson.name = "Matt";
+  // todoJson.name = "Matt";
   console.log("FINISHED JSON:")
   console.log(todoJson)
   res.json(todoJson);
