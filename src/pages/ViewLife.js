@@ -20,7 +20,7 @@ function ViewLife() {
     showFile(fileInput)
   }, [fileInput])
 
-  const showFile = async (file) => {
+  const showFile = async (e, file) => {
     const lifeFilePath = env.LIFE_DIR
     console.log("LIFE DIR IS: " + env.LIFE_DIR)
     e.preventDefault()
