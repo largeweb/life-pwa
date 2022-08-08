@@ -14,22 +14,22 @@ function ViewLife() {
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [fileInput, setFileInput] = useState('todo')
 
-  // useEffect(() => {
-  //   showFile(fileInput)
-  // }, [fileInput])
+  useEffect(() => {
+    showFile(fileInput)
+  }, [fileInput])
 
-  // const showFile = async (e, file) => {
-  //   const lifeFilePath = env.LIFE_DIR
-  //   console.log("LIFE DIR IS: " + window.env.LIFE_DIR)
-  //   e.preventDefault()
-  //   const reader = new FileReader()
-  //   reader.onload = async (e) => {
-  //     const text = (e.target.result)
-  //     console.log(text)
-  //     alert(text)
-  //   };
-  //   reader.readAsText(e.target.files[0])
-  // }
+  const showFile = async (e, file) => {
+    const lifeFilePath = process.env.REACT_APP_LIFE_DIR + file
+    console.log("LIFE DIR IS: " + lifeFilePath)
+    e.preventDefault()
+    const reader = new FileReader()
+    reader.onload = async (e) => {
+      const text = (e.target.result)
+      console.log(text)
+      alert(text)
+    };
+    reader.readAsText(lifeFilePath)
+  }
 
   return (
     <div className="App">
