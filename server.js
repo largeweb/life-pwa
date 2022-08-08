@@ -27,19 +27,37 @@ app.use(upload.array())
 
 // 🌟 CHANGE THIS ROUTE ON SERVER 🌟
 app.get('/life', (req, res) => {
-	const reject = () => {
-		res.setHeader('www-authenticate', 'Basic')
-		res.sendStatus(401)
-	}
-	const authorization = req.headers.authorization
-	if(!authorization) {
-		return reject()
-	}
-	const [username, password] = Buffer.from(authorization.replace('Basic ', ''), 'base64').toString().split(':')
-	if(! (username === 'm' && password === 'l')) {
-		return reject()
-	}
-	res.sendFile('/home/matt/life/summer/todo.txt');
+	// const reject = () => {
+	// 	res.setHeader('www-authenticate', 'Basic')
+	// 	res.sendStatus(401)
+	// }
+	// const authorization = req.headers.authorization
+	// if(!authorization) {
+	// 	return reject()
+	// }
+	// const [username, password] = Buffer.from(authorization.replace('Basic ', ''), 'base64').toString().split(':')
+	// if(! (username === 'm' && password === 'l')) {
+	// 	return reject()
+	// }
+	// res.sendFile('/home/matt/life/summer/todo.txt');
+
+  var array = fs.readFileSync('/home/matt/life/summer/todo.txt').toString().split("\n");
+  var todoJson = {}
+  todoJson.lines = []
+  for(i in array) {
+      console.log(array[i]);
+      // todoJson[i] = array[i];
+      todoJson.lines.push(array[i]);
+  }
+  todoJson.name = "Matt";
+  console.log("FINISHED JSON:")
+  console.log(todoJson)
+  res.json(todoJson);
+	// exec('cat /home/matt/life/summer/todo.txt',
+  //  	function (error, stdout, stderr) {
+	// 	console.log(stdout);
+	// 	res.sendFile(stdout);
+	// });
 })
 app.get('/pull-life', (req, res) => {
 	console.log("we will try to pull");

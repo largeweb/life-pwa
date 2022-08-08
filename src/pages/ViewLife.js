@@ -16,10 +16,11 @@ function ViewLife() {
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [fileInput, setFileInput] = useState('todo')
+  const [fileText, setFileText] = useState('')
 
-  // useEffect(() => {
-  //   showFile()
-  // }, [fileInput])
+  useEffect(() => {
+    fetchApi()
+  }, [fileInput])
 
   // const showFile = async () => {
   //   const lifeFilePath = process.env.REACT_APP_LIFE_DIR.concat(fileInput)
@@ -28,6 +29,21 @@ function ViewLife() {
   //     console.log(data)
   //   })
   // }
+  const fetchApi = async () => {
+    // Simple GET request using fetch
+    // console.log("function triggered")
+    // fetch('localhost:5000/life')
+    // .then(response => response.json())
+    // .then(data => setFileText(JSON.stringify(data)));
+
+    // const response = await fetch('https://api.npms.io/v2/search?q=react');
+    // const data = await response.json();
+    // setFileText(data.total)
+
+    const response = await fetch('localhost:5000/life');
+    const data = await response.json();
+    setFileText(data.lines)
+  }
 
   return (
     <div className="App">
@@ -42,6 +58,7 @@ function ViewLife() {
         <Link to={'localhost:5000/pull-life'}><button className='menubutton' >PULL CHANGES</button></Link>
         <Link to={'localhost:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link>
         <div>{userInput}</div>
+        <div>{fileText}</div>
       </div>
       {/* <Footer /> */}
     </div>
