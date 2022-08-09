@@ -57,21 +57,14 @@ app.post('/life/', (req, res) => {
   var todoJson = {}
   todoJson.lines = []
   for(i in array) {
-      // console.log(array[i]);
-      // todoJson[i] = array[i];
       todoJson.lines.push(array[i]);
   }
-  // todoJson.name = "Matt";
   console.log("FINISHED JSON:")
   console.log(todoJson)
   res.json(todoJson);
-	// exec('cat /home/matt/life/summer/todo.txt',
-  //  	function (error, stdout, stderr) {
-	// 	console.log(stdout);
-	// 	res.sendFile(stdout);
-	// });
 })
-app.get('/pull-life', (req, res) => {
+
+app.post('/pull-life', (req, res) => {
 	console.log("we will try to pull");
 	exec('cron-pull',
    	function (error, stdout, stderr) {
@@ -83,6 +76,7 @@ app.get('/pull-life', (req, res) => {
 	});
 	console.log("maybe it worked?");
 })
+
 // app.post('/added/', (req, res) => {
 // 	let stuff = req.body.stuff + "\n"
 // 	console.log("adding " + stuff + " to added.txt")
