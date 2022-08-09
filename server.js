@@ -60,7 +60,7 @@ app.post('/life/', (req, res) => {
       todoJson.lines.push(array[i]);
   }
   console.log("FINISHED JSON:")
-  console.log(todoJson)
+  // console.log(todoJson)
   res.json(todoJson);
 })
 
