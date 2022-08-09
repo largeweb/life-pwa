@@ -14,11 +14,13 @@ import fs from "fs"
 
 function ViewLife() {
 
+  const buttonColor = rgb(208, 246, 206)
+
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [fileInput, setFileInput] = useState('summer/todo')
   const [fileText, setFileText] = useState([])
   const [loading, setLoading] = useState(false);
-  const [pullButtonColor, setPullButtonColor] = useState("rgb(208, 246, 206)");
+  const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
 
   useEffect(() => {
     setTimeout(() => {
@@ -50,7 +52,7 @@ function ViewLife() {
     setTimeout(function(){
       console.log("fetching life text")
       fetchLifeText()
-      setPullButtonColor("rgb(208, 246, 206)")
+      setPullButtonColor(buttonColor)
     }, 2000)
     )
   }
