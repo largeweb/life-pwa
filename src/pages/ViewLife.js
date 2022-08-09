@@ -51,7 +51,7 @@ function ViewLife() {
         <Link to={'http://170.187.159.180:5000/pull-life'}><button className='menubutton' >PULL CHANGES</button></Link>
         {/* <Link to={'http://170.187.159.180:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link> */}
         <div>{userInput}</div>
-        <div style={{fontSize:"20px", textAlign:"left", marginBottom:"30px", marginLeft:"30px"}}>
+        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
       </div>
