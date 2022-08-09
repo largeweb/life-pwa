@@ -82,7 +82,7 @@ app.post('/pull-life', (req, res) => {
 
 app.post('/addtolife', (req, res) => {
 
-	let stuff = req.body.stuff + "\n"
+	let stuff = "\n" + req.body.stuff
 	let file = req.body.file + ".txt"
 
 	console.log("adding " + stuff + " to " + file);
