@@ -17,7 +17,7 @@ function ViewLife() {
   const buttonColor = "rgb(208, 246, 206)"
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
-  const [fileInput, setFileInput] = useState('summer/todo')
+  const [fileInput, setFileInput] = useLocalStorage('summer/todo')
   const [fileText, setFileText] = useState([])
   const [loading, setLoading] = useState(false);
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
