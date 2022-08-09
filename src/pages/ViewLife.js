@@ -44,7 +44,10 @@ function ViewLife() {
     const response = await fetch('http://170.187.159.180:5000/pull-life', {
       method: 'POST'
     });
-    fetchLifeText()
+    setTimeout(function(){
+      console.log("fetching life text")
+      fetchLifeText()
+    }, 2000);
   }
 
   return (
