@@ -14,7 +14,7 @@ import fs from "fs"
 
 function ViewLife() {
 
-  const buttonColor = rgb(208, 246, 206)
+  const buttonColor = "rgb(208, 246, 206)"
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [fileInput, setFileInput] = useState('summer/todo')
