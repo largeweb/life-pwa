@@ -43,9 +43,8 @@ function ViewLife() {
   const fetchPullLife = async () => {
     const response = await fetch('http://170.187.159.180:5000/pull-life', {
       method: 'POST'
-      // headers: { 'Content-Type': 'application/json' },
-      // body: JSON.stringify({ dir: fileInput+".txt" })
     });
+    fetchLifeText()
   }
 
   return (
