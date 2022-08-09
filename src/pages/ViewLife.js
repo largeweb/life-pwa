@@ -35,7 +35,7 @@ function ViewLife() {
     let textArr = []
     for(let i = 0; i < data.lines.length; i++) {
       console.log(data.lines[i])
-      textArr.push("["+i+"]"+data.lines[i])
+      textArr.push("["+i+"] "+data.lines[i])
     }
     setFileText(textArr)
   }
@@ -48,8 +48,8 @@ function ViewLife() {
         <textarea style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setFileInput(e.target.value)} value={fileInput}></textarea>
         <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
         <button className='menubutton'onClick={(e) => fetchLifeText()} >View {process.env.REACT_APP_LIFE_DIR}{fileInput}.txt</button>
-        <Link to={'localhost:5000/pull-life'}><button className='menubutton' >PULL CHANGES</button></Link>
-        <Link to={'localhost:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link>
+        <Link to={'http://170.187.159.180:5000/pull-life'}><button className='menubutton' >PULL CHANGES</button></Link>
+        {/* <Link to={'http://170.187.159.180:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link> */}
         <div>{userInput}</div>
         <div style={{fontSize:"20px", textAlign:"left", marginBottom:"30px", marginLeft:"30px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
