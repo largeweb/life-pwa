@@ -14,7 +14,7 @@ function AddSomething() {
   const buttonColor = "rgb(208, 246, 206)"
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
-  const [addFile, setAddFile] = useLocalStorage('addFilePath', 'empty')
+  const [addFile, setAddFile] = useLocalStorage('addFilePath', 'summer/added')
   const [addInput, setAddInput] = useState('')
   const [fileText, setFileText] = useState([])
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
