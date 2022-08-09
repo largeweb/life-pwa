@@ -85,7 +85,7 @@ app.post('/addtolife', (req, res) => {
 	let stuff = "\n" + req.body.stuff
 	let file = req.body.file + ".txt"
 
-	console.log("adding " + stuff + " to " + file);
+	console.log("adding: " + stuff + " to " + file);
 	fs.appendFile(process.env.REACT_APP_LIFE_DIR + file, stuff, (err) =>{
 		if(err) throw err;
 		console.log("added " + stuff + " to " + file);
