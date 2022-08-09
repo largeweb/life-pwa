@@ -18,6 +18,7 @@ function ViewLife() {
   const [fileInput, setFileInput] = useState('summer/todo')
   const [fileText, setFileText] = useState([])
   const [loading, setLoading] = useState(false);
+  const [pullButtonColor, setPullButtonColor] = useState("rgb(208, 246, 206)");
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,13 +42,17 @@ function ViewLife() {
   }
 
   const fetchPullLife = async () => {
+    setPullButtonColor("red")
     const response = await fetch('http://170.187.159.180:5000/pull-life', {
       method: 'POST'
-    });
+    })
+    .then(
     setTimeout(function(){
       console.log("fetching life text")
       fetchLifeText()
-    }, 2000);
+      setPullButtonColor("rgb(208, 246, 206)")
+    }, 2000)
+    )
   }
 
   return (
@@ -58,7 +63,7 @@ function ViewLife() {
         <textarea style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setFileInput(e.target.value)} value={fileInput}></textarea>
         <button className='menubutton' onClick={(e) => fetchLifeText()} >View File</button>
         <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
-        <button className='menubutton' onClick={(e) => fetchPullLife()}>PULL CHANGES</button>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>PULL CHANGES</button>
         {/* <Link to={'http://170.187.159.180:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link> */}
         <div>{userInput}</div>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
