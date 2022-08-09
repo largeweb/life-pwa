@@ -11,11 +11,49 @@ import useLocalStorage from "react-use-localstorage"
 
 function AddSomething() {
 
-  const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
-  const [addInput, setAddInput] = useState('')
+  const buttonColor = "rgb(208, 246, 206)"
 
+  const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
+  const [addFile, setAddFile] = useLocalStorage('addFilePath', 'empty')
+  const [addInput, setAddInput] = useState('')
+  const [fileText, setFileText] = useState([])
+  const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
+  const [pullButtonText, setPullButtonText] = useState("Add to Life");
+
+  const fetchPullLife = async () => {
+    setPullButtonColor("pink")
+    setPullButtonText("Pulling Life...")
+    const response = await fetch('http://170.187.159.180:5000/pull-life', {
+      method: 'POST'
+    })
+    .then(
+    setTimeout(function(){
+      console.log("Changing button color to add")
+      addToLife()
+    }, 2000)
+    )
+  }
   const addToLife = async() => {
-    setAddInput("test")
+    setPullButtonColor("yellow")
+    setPullButtonText("Adding")
+    console.log("Will now try to add: {" + addInput + "} to: {" + addFile + "}")
+    const response = await fetch('http://170.187.159.180:5000/addtolife', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ file: addFile, stuff: addInput })
+    });
+    const data = await response.json();
+    let textArr = []
+    for(let i = 0; i < data.lines.length; i++) {
+      console.log(data.lines[i])
+      textArr.push("["+i+"] "+data.lines[i])
+    }
+    setFileText(textArr)
+    setTimeout(function(){
+      console.log("Changing button color back")
+      setPullButtonColor(buttonColor)
+      setPullButtonText("Add to Life")
+    }, 2000)
   }
 
   return (
@@ -24,12 +62,16 @@ function AddSomething() {
       <div className='mainmenu'>
         <h1 style={{fontSize:"30px", fontWeight:"700"}}>📋 Add 📋</h1>
         {/* <input type="text" style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"100%", height:"200px"}}></input> */}
-        <textarea style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddInput(e.target.value)} value={addInput}></textarea>
-        <button className='menubutton' onClick={addToLife}>Add to Life</button>
-        <button className='menubutton' onClick={(e) => setAddInput('')}>Reset Text</button>
+        <textarea placeholder='Add File' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddFile(e.target.value)} value={addFile}></textarea>
+        <textarea placeholder='What to Add' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddInput(e.target.value)} value={addInput}></textarea>
         <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
         <div>{userInput}</div>
+        <div>{addFile}</div>
         <div>{addInput}</div>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>{pullButtonText}</button>
+        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
+          {fileText.map(txt => <div>{txt}</div>)}
+        </div>
       </div>
       {/* <Footer /> */}
     </div>

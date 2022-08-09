@@ -30,6 +30,22 @@ app.use(cors())
 app.use(express.json())
 app.use(require('body-parser').json());
 
+// ⚠️ THIS IS UNTESTED ⚠️
+const rejectUnauthenticated = () => {
+	const reject = () => {
+		res.setHeader('www-authenticate', 'Basic')
+		res.sendStatus(401)
+	}
+	const authorization = req.headers.authorization
+	if(!authorization) {
+		return reject()
+	}
+	const [username, password] = Buffer.from(authorization.replace('Basic ', ''), 'base64').toString().split(':')
+	if(! (username === 'm' && password === 'l')) {
+		return reject()
+	}
+}
+
 
 // 🌟 CHANGE THIS ROUTE ON SERVER 🌟
 app.post('/life/', (req, res) => {
@@ -38,30 +54,17 @@ app.post('/life/', (req, res) => {
   console.log(req.body.dir);
   console.log("READING FROM: " + filePath);
   res.header('Access-Control-Allow-Methods', 'POST');
-	// const reject = () => {
-	// 	res.setHeader('www-authenticate', 'Basic')
-	// 	res.sendStatus(401)
-	// }
-	// const authorization = req.headers.authorization
-	// if(!authorization) {
-	// 	return reject()
-	// }
-	// const [username, password] = Buffer.from(authorization.replace('Basic ', ''), 'base64').toString().split(':')
-	// if(! (username === 'm' && password === 'l')) {
-	// 	return reject()
-	// }
-	// res.sendFile('/home/matt/life/summer/todo.txt');
 
   console.log("TRYING TO READ FROM: " + lifePath + req.body.dir);
   var array = fs.readFileSync(lifePath + req.body.dir).toString().split("\n");
-  var todoJson = {}
-  todoJson.lines = []
+  var returnJson = {}
+  returnJson.lines = []
   for(i in array) {
-      todoJson.lines.push(array[i]);
+      returnJson.lines.push(array[i]);
   }
   console.log("FINISHED JSON:")
   // console.log(todoJson)
-  res.json(todoJson);
+  res.json(returnJson);
 })
 
 app.post('/pull-life', (req, res) => {
@@ -76,6 +79,44 @@ app.post('/pull-life', (req, res) => {
 	});
 	console.log("maybe it worked?");
 })
+
+app.post('/addtolife', (req, res) => {
+
+	let stuff = req.body.stuff + "\n"
+	let file = req.body.file
+
+	console.log("adding " + stuff + " to " + file);
+	fs.appendFile(process.env.REACT_APP_LIFE_DIR + "", stuff, (err) =>{
+		if(err) throw err;
+	console.log("added " + stuff + " to " + file);
+		console.log("i believe...");
+	})
+	console.log("some is adding something!!");
+	console.log("running cron push");
+	exec('cron-addtolife',
+   	function (error, stdout, stderr) {
+		console.log('stdout: ' + stdout);
+		console.log('stderr: ' + stderr);
+		if (error !== null) {
+		     console.log('exec error: ' + error);
+		}
+	});
+	console.log("maybe it worked?");
+    setTimeout(function(){
+		console.log("fetching life text")
+		console.log("TRYING TO READ FROM: " + lifePath + file);
+		var array = fs.readFileSync(lifePath + file).toString().split("\n");
+		var returnJson = {}
+		returnJson.lines = []
+		for(i in array) {
+			returnJson.lines.push(array[i]);
+		}
+		console.log("FINISHED JSON:")
+		// console.log(todoJson)
+		res.json(returnJson);
+    }, 2000)
+  }
+)
 
 // app.post('/added/', (req, res) => {
 // 	let stuff = req.body.stuff + "\n"
