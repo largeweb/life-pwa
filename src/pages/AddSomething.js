@@ -56,6 +56,10 @@ function AddSomething() {
     }, 2000)
   }
 
+const resetText = async() => {
+	setAddInput('');
+}
+
   return (
     <div className="App">
       <Navbar />
@@ -68,6 +72,7 @@ function AddSomething() {
         <div>{userInput}</div>
         <div>{addFile}</div>
         <div>{addInput}</div>
+        <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>{pullButtonText}</button>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
