@@ -72,6 +72,11 @@ function ViewLife() {
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
       </div>
+        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
+          {fileText.map(txt => <div>{txt}</div>)}
+        </div>
+      <div className='mainmenu'>
+      </div>
       {/* <Footer /> */}
     </div>
   );
