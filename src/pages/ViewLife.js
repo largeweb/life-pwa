@@ -69,7 +69,7 @@ function ViewLife() {
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>PULL CHANGES</button>
         {/* <Link to={'http://170.187.159.180:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link> */}
         <div>{userInput}</div>
-        <div style={{fontSize:"20px", textAlign:"left", marginBottom:"30px", marginLeft:"-40px", marginRight:"-40px", backgroundColor:menuBackgroundColor, fontWeight:"700"}}>
+        <div style={{fontSize:"20px", textAlign:"left", marginBottom:"30px", marginLeft:"-50px", marginRight:"-50px", padding:"10px", backgroundColor:menuBackgroundColor, fontWeight:"700"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
       </div>
