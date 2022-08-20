@@ -15,6 +15,7 @@ import fs from "fs"
 function ViewLife() {
 
   const buttonColor = "rgb(208, 246, 206)"
+  const menuBackgroundColor = "rgb(191, 147, 147)"
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [fileInput, setFileInput] = useLocalStorage('fileInput', 'summer/todo')
@@ -68,7 +69,7 @@ function ViewLife() {
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>PULL CHANGES</button>
         {/* <Link to={'http://170.187.159.180:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link> */}
         <div>{userInput}</div>
-        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
+        <div style={{fontSize:"20px", textAlign:"left", marginBottom:"30px", marginLeft:"-20px", backgroundColor:menuBackgroundColor}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
       </div>
