@@ -18,7 +18,7 @@ function PlayPage() {
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
 
   return (
-    <div className="App">
+    <div className="App background">
       <Navbar />
       <div className='mainmenu' id="maindiv">
         <h1>⭕ PLAY ⭕</h1>

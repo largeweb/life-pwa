@@ -59,7 +59,7 @@ function ViewLife() {
   }
 
   return (
-    <div className="App">
+    <div className="App background">
       <Navbar />
       <div className='mainmenu' id="maindiv">
         <h1 style={{fontSize:"30px", fontWeight:"700"}}>💻 View 💻</h1>

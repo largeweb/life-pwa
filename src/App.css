@@ -13,12 +13,24 @@
   --mild: 15px;
 }
 
+body {
+  background-image: url('dev-matt.com:3001/images/retro-green.jpg');
+  background-size: cover;
+  /* background-repeat: repeat; */
+  background-color: blue;
+}
+
+.background {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/002/623/564/original/abstract-perspective-green-grid-retro-futuristic-neon-line-on-dark-background-80s-design-perspective-distorted-plane-landscape-composed-of-crossed-neon-lights-and-laser-beams-illustration-vector.jpg');
+  background-size: cover;
+  /* background-repeat: repeat; */
+  background-color: blue;
+  /* background-position: 0%; */
+}
+
 .App {
   text-align: center;
   /* background-color: var(--background-color); */
-  background-image: url('https://static.vecteezy.com/system/resources/previews/002/623/564/original/abstract-perspective-green-grid-retro-futuristic-neon-line-on-dark-background-80s-design-perspective-distorted-plane-landscape-composed-of-crossed-neon-lights-and-laser-beams-illustration-vector.jpg');
-  background-size: cover;
-  background-position: 0%;
   /* background-color: black; */
   border: 5px solid black;
 }
@@ -103,10 +115,14 @@
 html {
   /* background-color: var(--background-color); */
   /* border: 30px solid black; */
+  background-image: url('https://static.vecteezy.com/system/resources/previews/002/623/564/original/abstract-perspective-green-grid-retro-futuristic-neon-line-on-dark-background-80s-design-perspective-distorted-plane-landscape-composed-of-crossed-neon-lights-and-laser-beams-illustration-vector.jpg');
+  background-size: cover;
+  /* background-repeat: repeat; */
+  background-color: blue;
   /* background-color: black; */
   /* box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.759); */
   /* margin: 30px; */
-    background: black;
+    /* background: black; */
   /* padding: 10px; */
     /* box-shadow: 0 0 7px 3px #ffffff; */
 }

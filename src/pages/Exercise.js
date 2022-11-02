@@ -47,7 +47,7 @@ function Exercise() {
   }
 
   return (
-    <div className="App">
+    <div className="App background">
       <Navbar />
       <div className='mainmenu' id="maindiv">
         <h1>EXERCISE 💪</h1>

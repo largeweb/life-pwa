@@ -75,7 +75,7 @@ function TicTacToe() {
 
 
   return (
-    <div className="App">
+    <div className="App background">
       <Navbar />
       <div className='mainmenu' id="maindiv">
         <h1> <span style={{fontSize:"40px", fontWeight:"700"}}>Tic</span> <span style={{fontSize:"30px", fontWeight:"700"}}>Tac</span> <span style={{fontSize:"22px", fontWeight:"700"}}>Toe</span></h1>
