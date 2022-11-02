@@ -13,12 +13,15 @@
   --mild: 15px;
 }
 
-.App {
-  text-align: center;
-  /* background-color: var(--background-color); */
+body {
   background-image: url('https://static.vecteezy.com/system/resources/previews/002/623/564/original/abstract-perspective-green-grid-retro-futuristic-neon-line-on-dark-background-80s-design-perspective-distorted-plane-landscape-composed-of-crossed-neon-lights-and-laser-beams-illustration-vector.jpg');
   background-size: cover;
   background-position: 0%;
+}
+
+.App {
+  text-align: center;
+  /* background-color: var(--background-color); */
   /* background-color: black; */
   border: 5px solid black;
 }
