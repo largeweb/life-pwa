@@ -21,6 +21,11 @@ app.get('/', (req, res) => { //Line 9
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); //Line 10
 });
 
+// create a GET route for snake
+app.get('/snake', (req, res) => { //Line 9
+  res.sendFile("/root/life-pwa/snake.html")
+});
+
 
 //MIDDLEWARE
 app.use("/life", express.static(lifePath))
