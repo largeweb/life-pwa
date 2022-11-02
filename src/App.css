@@ -1,4 +1,5 @@
 :root {
+  --mainnav-color: #8ae2f1;
   --background-color: rgb(185, 185, 227);
   --button-background-color: rgb(208, 246, 206);
   --menu-background-color: rgb(191, 147, 147);
@@ -165,4 +166,15 @@ html {
   padding: 10px;
   width: 80%;
   margin: 0;
+}
+
+#mainnav {
+  position:fixed;
+  left:2%;
+  right:2%;
+  top:2%;
+  background-color: var(--mainnav-color);
+  border-radius: 2%;
+  height: 10%;
+  opacity: 0.8;
 }
