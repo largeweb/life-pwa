@@ -34,7 +34,7 @@ function ChangeWallpaper() {
       // body: JSON.stringify({ file: addFile, stuff: addInput })
     });
     const data = await response.json();
-    console.log("Wallpaper should be changed now to " + wallpaperid)
+    console.log("Wallpaper should be changed now to " + data.mission)
     // let textArr = []
     // for(let i = 0; i < data.lines.length; i++) {
     //   console.log(data.lines[i])
