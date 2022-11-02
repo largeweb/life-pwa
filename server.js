@@ -61,7 +61,7 @@ app.post('/images/set/:imageid', (req, res) => {
 //   console.log("Requesting image: " + filePath);
   // console.log(req.body.image);
   console.log("CHANGING IMAGE TO: " + req.params.imageid);
-  currentImage = imageid;
+  currentImage = req.params.imageid;
   res.header('Access-Control-Allow-Methods', 'POST');
 
   // console.log("TRYING TO READ FROM: " + lifePath + req.body.dir);
