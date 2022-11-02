@@ -20,7 +20,7 @@ function PlayPage() {
   return (
     <div className="App">
       <Navbar />
-      <div className='mainmenu'>
+      <div className='mainmenu' id="maindiv">
         <h1>⭕ PLAY ⭕</h1>
         <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
         <div>{userInput}</div>

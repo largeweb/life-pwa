@@ -12,6 +12,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const lifePath = process.env.REACT_APP_LIFE_DIR;
+const imagePath = process.env.REACT_APP_IMAGE_DIR;
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
@@ -29,6 +30,7 @@ app.get('/snake', (req, res) => { //Line 9
 
 //MIDDLEWARE
 app.use("/life", express.static(lifePath))
+app.use("/images", express.static(imagePath))
 app.use(urlencoded({extended: true}))
 app.use(upload.array())
 app.use(cors())
@@ -50,6 +52,28 @@ const rejectUnauthenticated = () => {
 		return reject()
 	}
 }
+
+app.get('/images/:imageid', (req, res) => {
+  // const filePath = path.join(imagePath.toString(), req.body.imagename);
+  const filePath = path.join(imagePath.toString(), req.params.imageid);
+  console.log("Requesting image: " + filePath);
+  // console.log(req.body.image);
+  console.log("READING FROM: " + filePath);
+  res.header('Access-Control-Allow-Methods', 'POST');
+
+  // console.log("TRYING TO READ FROM: " + lifePath + req.body.dir);
+  // var array = fs.readFileSync(lifePath + req.body.dir).toString().split("\n");
+  // var returnJson = {}
+  // returnJson.lines = []
+  // for(i in array) {
+  //     returnJson.lines.push(array[i]);
+  // }
+  // console.log("FINISHED JSON:")
+  // console.log(todoJson)
+  // res.json(returnJson);
+	
+  res.sendFile(filePath);
+})
 
 
 // 🌟 CHANGE THIS ROUTE ON SERVER 🌟

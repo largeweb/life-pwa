@@ -35,13 +35,14 @@ function App() {
       <div>
         <div className='mainmenu'>
           <div>{userInput}</div>
-          <Link to={'/play'}><button className='menubutton'>Play Area</button></Link>
-          <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
-          <Link to={'/add'}><button className='menubutton'>Add Something</button></Link>
           {userInput === "life"
           ? <Link to={'/view'}><button className='menubutton'>View Life</button></Link>
           : <div />
           }
+          <Link to={'/play'}><button className='menubutton'>Play Area</button></Link>
+          <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
+          <Link to={'/add'}><button className='menubutton'>Add Something</button></Link>
+          <Link to={'/changewallpaper'}><button className='menubutton'>Change Wallpaper</button></Link>
         </div>
       </div>
       {/* <div className='footer'><Footer /></div> */}

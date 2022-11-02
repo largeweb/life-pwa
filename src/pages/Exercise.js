@@ -49,7 +49,7 @@ function Exercise() {
   return (
     <div className="App">
       <Navbar />
-      <div className='mainmenu'>
+      <div className='mainmenu' id="maindiv">
         <h1>EXERCISE 💪</h1>
         {locked=="true"
         ? <div />

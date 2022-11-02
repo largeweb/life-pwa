@@ -61,7 +61,7 @@ function ViewLife() {
   return (
     <div className="App">
       <Navbar />
-      <div className='mainmenu'>
+      <div className='mainmenu' id="maindiv">
         <h1 style={{fontSize:"30px", fontWeight:"700"}}>💻 View 💻</h1>
         <textarea style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setFileInput(e.target.value)} value={fileInput}></textarea>
         <button className='menubutton' onClick={(e) => fetchLifeText()} >View File</button>

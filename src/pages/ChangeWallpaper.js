@@ -9,7 +9,7 @@ import { MDBFooter } from 'mdb-react-ui-kit';
 import {Link} from "react-router-dom";
 import useLocalStorage from "react-use-localstorage"
 
-function AddSomething() {
+function ChangeWallpaper() {
 
   const buttonColor = "rgb(208, 246, 206)"
 
@@ -83,4 +83,4 @@ const resetText = async() => {
   );
 }
 
-export default AddSomething;
+export default ChangeWallpaper;

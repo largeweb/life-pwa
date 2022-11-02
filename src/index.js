@@ -10,6 +10,7 @@ import AddSomething from './pages/AddSomething';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import ViewLife from './pages/ViewLife';
+import ChangeWallpaper from './pages/ChangeWallpaper';
 import fs from 'fs'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,6 +24,7 @@ root.render(
         <Route path="/tictactoe" element={<TicTacToe/>} />
         <Route path="/add" element={<AddSomething/>} />
         <Route path="/view" element={<ViewLife/>} />
+        <Route path="/changewallpaper" element={<ChangeWallpaper/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
