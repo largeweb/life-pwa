@@ -20,12 +20,12 @@ function ChangeWallpaper() {
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
   const [pullButtonText, setPullButtonText] = useState("Add to Life");
 
-  const changewallpaper = async (wallpaperid) => {
-    const response = await fetch('http://170.187.159.180:5000/pull-life', {
-      method: 'GET'
-    })
-    .then(changewallpaperfetch(wallpaperid))
-  }
+  // const changewallpaper = async (wallpaperid) => {
+  //   const response = await fetch('http://170.187.159.180:5000/im', {
+  //     method: 'GET'
+  //   })
+  //   .then(changewallpaperfetch(wallpaperid))
+  // }
   const changewallpaperfetch = async(wallpaperid) => {
     // console.log("Will now try to add: {" + addInput + "} to: {" + addFile + "}")
     const response = await fetch(`http://170.187.159.180:5000/images/set/${wallpaperid}`, {
@@ -66,8 +66,8 @@ const resetText = async() => {
         <div>{addFile}</div>
         <div>{addInput}</div>
         <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
-        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => changewallpaper('retro-green.jpg')}>Retro Green</button>
-        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => changewallpaper('blue-grid.jpeg')}>Blue Grid</button>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => changewallpaperfetch('retro-green.jpg')}>Retro Green</button>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => changewallpaperfetch('blue-grid.jpeg')}>Blue Grid</button>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>

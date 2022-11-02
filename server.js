@@ -57,10 +57,11 @@ const rejectUnauthenticated = () => {
 
 app.post('/images/set/:imageid', (req, res) => {
   // const filePath = path.join(imagePath.toString(), req.body.imagename);
-  const filePath = path.join(imagePath.toString(), req.params.imageid);
-  console.log("Requesting image: " + filePath);
+//   const filePath = path.join(imagePath.toString(), req.params.imageid);
+//   console.log("Requesting image: " + filePath);
   // console.log(req.body.image);
-  console.log("READING FROM: " + filePath);
+  console.log("CHANGING IMAGE TO: " + req.params.imageid);
+  currentImage = imageid;
   res.header('Access-Control-Allow-Methods', 'POST');
 
   // console.log("TRYING TO READ FROM: " + lifePath + req.body.dir);
@@ -74,7 +75,7 @@ app.post('/images/set/:imageid', (req, res) => {
   // console.log(todoJson)
   // res.json(returnJson);
 
-  res.sendFile(filePath);
+  res.json({"mission":"success"});
 })
 
 app.get('/images/current', (req, res) => {
