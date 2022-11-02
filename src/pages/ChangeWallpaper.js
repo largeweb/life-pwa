@@ -20,40 +20,33 @@ function ChangeWallpaper() {
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
   const [pullButtonText, setPullButtonText] = useState("Add to Life");
 
-  const fetchPullLife = async () => {
-    setPullButtonColor("pink")
-    setPullButtonText("Pulling Life...")
+  const changewallpaper = async (wallpaperid) => {
     const response = await fetch('http://170.187.159.180:5000/pull-life', {
-      method: 'POST'
+      method: 'GET'
     })
-    .then(
-    setTimeout(function(){
-      console.log("Changing button color to add")
-      addToLife()
-    }, 2000)
-    )
+    .then(changewallpaperfetch(wallpaperid))
   }
-  const addToLife = async() => {
-    setPullButtonColor("yellow")
-    setPullButtonText("Adding")
-    console.log("Will now try to add: {" + addInput + "} to: {" + addFile + "}")
-    const response = await fetch('http://170.187.159.180:5000/addtolife', {
+  const changewallpaperfetch = async(wallpaperid) => {
+    // console.log("Will now try to add: {" + addInput + "} to: {" + addFile + "}")
+    const response = await fetch(`http://170.187.159.180:5000/images/${wallpaperid}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ file: addFile, stuff: addInput })
     });
     const data = await response.json();
-    let textArr = []
-    for(let i = 0; i < data.lines.length; i++) {
-      console.log(data.lines[i])
-      textArr.push("["+i+"] "+data.lines[i])
-    }
-    setFileText(textArr)
-    setTimeout(function(){
-      console.log("Changing button color back")
-      setPullButtonColor(buttonColor)
-      setPullButtonText("Add to Life")
-    }, 2000)
+    console.log("Wallpaper should be changed now to " + wallpaperid)
+    // let textArr = []
+    // for(let i = 0; i < data.lines.length; i++) {
+    //   console.log(data.lines[i])
+    //   textArr.push("["+i+"] "+data.lines[i])
+    // }
+    // setFileText(textArr)
+    // setTimeout(function(){
+    //   console.log("Changing button color back")
+    //   setPullButtonColor(buttonColor)
+    //   setPullButtonText("Add to Life")
+    // }, 2000)
+    window.location.reload(false);
   }
 
 const resetText = async() => {
