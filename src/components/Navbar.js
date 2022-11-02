@@ -3,7 +3,8 @@ import {useState, useEffect} from "react"
 
 const Navbar = () => {
   return (
-    <div style={{marginBottom:"8%"}}>
+    // <div style={{marginBottom:"8%"}}>
+    <div>
         <div id='mainnav'>
         {/* <a className="navtext" href= */}
                               {/* Link */}

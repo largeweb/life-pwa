@@ -19,7 +19,7 @@ function App() {
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
 
   return (
-    <div className="App">
+    <div className="App" id="maindiv">
       <Navbar />
       <div>
         <div className='mainmenu'>
