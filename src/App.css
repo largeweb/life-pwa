@@ -180,5 +180,6 @@ html {
 }
 
 #maindiv {
-  margin-top: 50px;
+  position: fixed;
+  top: 12%;
 }
