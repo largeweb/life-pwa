@@ -97,7 +97,7 @@ app.get('/images/current', (req, res) => {
   // console.log(todoJson)
   // res.json(returnJson);
 
-  res.json({"mission":"success"});
+  res.sendFile(filePath);
 })
 
 
