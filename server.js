@@ -55,7 +55,7 @@ const rejectUnauthenticated = () => {
 	}
 }
 
-app.get('/images/set/:imageid', (req, res) => {
+app.post('/images/set/:imageid', (req, res) => {
   // const filePath = path.join(imagePath.toString(), req.body.imagename);
   const filePath = path.join(imagePath.toString(), req.params.imageid);
   console.log("Requesting image: " + filePath);

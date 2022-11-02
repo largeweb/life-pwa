@@ -28,10 +28,10 @@ function ChangeWallpaper() {
   }
   const changewallpaperfetch = async(wallpaperid) => {
     // console.log("Will now try to add: {" + addInput + "} to: {" + addFile + "}")
-    const response = await fetch(`http://170.187.159.180:5000/images/${wallpaperid}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ file: addFile, stuff: addInput })
+    const response = await fetch(`http://170.187.159.180:5000/images/set/${wallpaperid}`, {
+      method: 'POST'
+      // headers: { 'Content-Type': 'application/json' },
+      // body: JSON.stringify({ file: addFile, stuff: addInput })
     });
     const data = await response.json();
     console.log("Wallpaper should be changed now to " + wallpaperid)
