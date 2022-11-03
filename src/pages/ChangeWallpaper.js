@@ -69,9 +69,9 @@ const resetText = async() => {
         {/* <div>{addFile}</div> */}
         {/* <div>{addInput}</div> */}
         {/* <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button> */}
-        <button className='menubutton' onClick={(e) => changewallpaperfetch('retro-green.jpg')} style={{backgroundImage: `url(${retrogreen})`, backgroundSize:"100px"}}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"70px"}}>Retro Green</span></button>
-        <button className='menubutton' onClick={(e) => changewallpaperfetch('blue-grid.jpg')} style={{backgroundImage: `url(${bluegrid})`, backgroundSize:"100px"}}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"70px"}}>Blue Grid</span></button>
-        <button className='menubutton' style={{backgroundImage: `url(${redwave})`, backgroundSize:"100px"}} onClick={(e) => changewallpaperfetch('red-wave.jpg')}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"70px"}}>Red Wave</span></button>
+        <button className='menubutton' onClick={(e) => changewallpaperfetch('retro-green.jpg')} style={{backgroundImage: `url(${retrogreen})`, backgroundSize:"100px"}}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Retro Green</span></button>
+        <button className='menubutton' onClick={(e) => changewallpaperfetch('blue-grid.jpg')} style={{backgroundImage: `url(${bluegrid})`, backgroundSize:"100px"}}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Blue Grid</span></button>
+        <button className='menubutton' style={{backgroundImage: `url(${redwave})`, backgroundSize:"100px"}} onClick={(e) => changewallpaperfetch('red-wave.jpg')}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Red Wave</span></button>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
