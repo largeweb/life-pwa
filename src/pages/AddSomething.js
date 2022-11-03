@@ -14,8 +14,8 @@ function AddSomething() {
   const buttonColor = "rgb(208, 246, 206)"
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
-  const [recent1, setRecent1] = useLocalStorage('userInput', 'school/abc')
-  const [recent2, setRecent2] = useLocalStorage('userInput', 'school/abc')
+  const [recent1, setRecent1] = useLocalStorage('recent1', 'school/abc')
+  const [recent2, setRecent2] = useLocalStorage('recent2', 'school/abc')
   const [addFile, setAddFile] = useLocalStorage('addFilePath', 'school/abc')
   const [addInput, setAddInput] = useState('')
   const [fileText, setFileText] = useState([])
