@@ -116,7 +116,10 @@ body {
 html {
   /* background-color: var(--background-color); */
   /* border: 30px solid black; */
-  background-image: url('https://static.vecteezy.com/system/resources/previews/002/623/564/original/abstract-perspective-green-grid-retro-futuristic-neon-line-on-dark-background-80s-design-perspective-distorted-plane-landscape-composed-of-crossed-neon-lights-and-laser-beams-illustration-vector.jpg');
+
+  /* UNCOMMENT THIS BG IMAGE TO GET COOL FOOTER SEPARATED IMAGE*/
+  /* background-image: url('https://static.vecteezy.com/system/resources/previews/002/623/564/original/abstract-perspective-green-grid-retro-futuristic-neon-line-on-dark-background-80s-design-perspective-distorted-plane-landscape-composed-of-crossed-neon-lights-and-laser-beams-illustration-vector.jpg'); */
+
   background-size: cover;
   /* background-repeat: repeat; */
   /* background-color: blue; */
