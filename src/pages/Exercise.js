@@ -48,7 +48,7 @@ function Exercise() {
 
   return (
     <div className="App background">
-      {locked=='true' && <Navbar />}
+      {locked=='false' && <Navbar />}
       <div className='mainmenu' id="maindiv">
         <h1>EXERCISE 💪</h1>
         {/* {locked=="true"
