@@ -37,7 +37,7 @@ function AddSomething() {
   //   )
   // }
   const addToLife = async() => {
-    if(recent2!=addFile && recent1!=addFile) {
+    if(recent1!=addFile) {
       setRecent2(recent1)
       setRecent1(addFile)
     }

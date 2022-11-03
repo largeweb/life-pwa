@@ -90,6 +90,15 @@ body {
   width:80%;
 }
 
+.menubuttonhistory {
+  padding: 5px;
+  border: 2px solid var(--border-color);
+  background-color: var(--button-background-color);
+  border-radius: 3%;
+  width:30%;
+  font-size: 15px;
+}
+
 .header {
   background-color: purple;
   border-radius: 20%;
