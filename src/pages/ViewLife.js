@@ -76,7 +76,7 @@ function ViewLife() {
         // <div style={{fontSize:"14px", textAlign:"left", marginBottom:"30px", marginLeft:"-40px", marginRight:"-40px", padding:"2px", backgroundColor:menuBackgroundColor, fontWeight:"700", border:"5px solid gray"}}>
         //   {fileText.map(txt => <div>{txt}</div>)}
         // </div>
-        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"5%", width:"90%", backgroundColor:"lightgray", borderRadius:"1%", border:"3px solid gray"}}>
+        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"5%", width:"90%", backgroundColor:"lightgray", borderRadius:"1%", border:"3px solid gray", padding:"4px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
         }
