@@ -8,6 +8,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { MDBFooter } from 'mdb-react-ui-kit';
 import {Link} from "react-router-dom";
 import useLocalStorage from "react-use-localstorage"
+import retrogreen from "../images/retro-green.jpg"
+import bluegrid from "../images/blue-grid.jpg"
+import redwave from "../images/red-wave.jpg"
 
 function ChangeWallpaper() {
 
@@ -57,18 +60,18 @@ const resetText = async() => {
     <div className="App background">
       <Navbar />
       <div className='mainmenu' id="maindiv">
-        <h1 style={{fontSize:"30px", fontWeight:"700"}}>📋 Add 📋</h1>
+        <h1 style={{fontSize:"40px", fontWeight:"700"}}>🎨🖌️🎨</h1>
         {/* <input type="text" style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"100%", height:"200px"}}></input> */}
-        <textarea placeholder='Add File' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddFile(e.target.value)} value={addFile}></textarea>
-        <textarea placeholder='What to Add' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddInput(e.target.value)} value={addInput}></textarea>
+        {/* <textarea placeholder='Add File' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddFile(e.target.value)} value={addFile}></textarea> */}
+        {/* <textarea placeholder='What to Add' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddInput(e.target.value)} value={addInput}></textarea> */}
         {/* <Link to={'/'}><button className='menubutton' >Back Home</button></Link> */}
         <div>{userInput}</div>
-        <div>{addFile}</div>
-        <div>{addInput}</div>
-        <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
-        <button className='menubutton' onClick={(e) => changewallpaperfetch('retro-green.jpg')}>Retro Green</button>
-        <button className='menubutton' onClick={(e) => changewallpaperfetch('blue-grid.jpg')}>Blue Grid</button>
-        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => changewallpaperfetch('red-wave.jpg')}>Red Wave</button>
+        {/* <div>{addFile}</div> */}
+        {/* <div>{addInput}</div> */}
+        {/* <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button> */}
+        <button className='menubutton' onClick={(e) => changewallpaperfetch('retro-green.jpg')} style={{backgroundImage: `url(${retrogreen})`, backgroundSize:"100px"}}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px"}}>Retro Green</span></button>
+        <button className='menubutton' onClick={(e) => changewallpaperfetch('blue-grid.jpg')} style={{backgroundImage: `url(${bluegrid})`, backgroundSize:"100px"}}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px"}}>Blue Grid</span></button>
+        <button className='menubutton' style={{backgroundImage: `url(${redwave})`, backgroundSize:"100px"}} onClick={(e) => changewallpaperfetch('red-wave.jpg')}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px"}}>Red Wave</span></button>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
