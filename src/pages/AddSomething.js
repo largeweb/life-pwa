@@ -37,8 +37,11 @@ function AddSomething() {
   //   )
   // }
   const addToLife = async() => {
-    setRecent2(recent1)
-    setRecent1(addFile)
+    if(recent2!=addFile && recent1!=addFile) {
+      setRecent2(recent1)
+      setRecent1(addFile)
+    }
+    // setRecent1(addFile)
     setAnyText(true)
     setPullButtonColor("yellow")
     setPullButtonText("Adding")
