@@ -49,6 +49,8 @@ function AddSomething() {
       textArr.push("["+i+"] "+data.lines[i])
     }
     setFileText(textArr)
+    setPullButtonColor(buttonColor)
+    setPullButtonText("Add to Life")
     // setTimeout(function(){
     //   console.log("Changing button color back")
     //   setPullButtonColor(buttonColor)
