@@ -66,7 +66,7 @@ const resetText = async() => {
         <div>{addFile}</div>
         <div>{addInput}</div>
         <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
-        <button className='menubutton' onClick={(e) => changewallpaperfetch('retro-green.jpeg')}>Retro Green</button>
+        <button className='menubutton' onClick={(e) => changewallpaperfetch('retro-green.jpg')}>Retro Green</button>
         <button className='menubutton' onClick={(e) => changewallpaperfetch('blue-grid.jpg')}>Blue Grid</button>
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => changewallpaperfetch('red-wave.jpg')}>Red Wave</button>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
