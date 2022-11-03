@@ -35,7 +35,7 @@ function ViewLife() {
   const fetchLifeText = async () => {
     if(recent2!=fileInput && recent1!=fileInput) {
       setRecent2(recent1)
-      setRecent1(addFile)
+      setRecent1(fileInput)
     }
     setAnyText(true)
     const response = await fetch('http://170.187.159.180:5000/life', {
