@@ -46,7 +46,8 @@ function AddSomething() {
     let textArr = []
     for(let i = 0; i < data.lines.length; i++) {
       console.log(data.lines[i])
-      textArr.push("["+i+"] "+data.lines[i])
+      // textArr.push("["+i+"] "+data.lines[i])
+      textArr.push(data.lines[i])
     }
     setFileText(textArr)
     setPullButtonColor(buttonColor)
