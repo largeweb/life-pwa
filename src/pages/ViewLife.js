@@ -18,8 +18,10 @@ function ViewLife() {
   const menuBackgroundColor = "rgb(191, 147, 147)"
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
-  const [fileInput, setFileInput] = useLocalStorage('fileInput', 'summer/todo')
+  const [fileInput, setFileInput] = useLocalStorage('fileInput', 'school/abc')
   const [fileText, setFileText] = useState([])
+  const [recent1, setRecent1] = useLocalStorage('recent1', 'school/abc')
+  const [recent2, setRecent2] = useLocalStorage('recent2', 'school/abc')
   const [loading, setLoading] = useState(false);
   const [anyText, setAnyText] = useState(false);
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
@@ -31,6 +33,10 @@ function ViewLife() {
   }, []);
 
   const fetchLifeText = async () => {
+    if(recent2!=fileInput && recent1!=fileInput) {
+      setRecent2(recent1)
+      setRecent1(addFile)
+    }
     setAnyText(true)
     const response = await fetch('http://170.187.159.180:5000/life', {
       method: 'POST',
@@ -66,7 +72,9 @@ function ViewLife() {
       <Navbar />
       <div className='mainmenu' id="maindiv">
         <h1 style={{fontSize:"30px", fontWeight:"700"}}>💻 View 💻</h1>
-        <textarea style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setFileInput(e.target.value)} value={fileInput}></textarea>
+        <textarea style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"50px", fontSize:"20px"}} onChange={(e) => setFileInput(e.target.value)} value={fileInput}></textarea>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => setAddFile(recent1)}>{recent1}</button>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => setAddFile(recent2)}>{recent2}</button>
         <button className='menubutton' onClick={(e) => fetchLifeText()} >View File</button>
         {/* <Link to={'/'}><button className='menubutton' >Back Home</button></Link> */}
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>PULL CHANGES</button>
