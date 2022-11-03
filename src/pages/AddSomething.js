@@ -20,19 +20,19 @@ function AddSomething() {
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
   const [pullButtonText, setPullButtonText] = useState("Add to Life");
 
-  const fetchPullLife = async () => {
-    setPullButtonColor("pink")
-    setPullButtonText("Pulling Life...")
-    const response = await fetch('http://170.187.159.180:5000/pull-life', {
-      method: 'POST'
-    })
-    .then(
-    setTimeout(function(){
-      console.log("Changing button color to add")
-      addToLife()
-    }, 2000)
-    )
-  }
+  // const fetchPullLife = async () => {
+  //   setPullButtonColor("pink")
+  //   setPullButtonText("Pulling Life...")
+  //   const response = await fetch('http://170.187.159.180:5000/pull-life', {
+  //     method: 'POST'
+  //   })
+  //   .then(
+  //   setTimeout(function(){
+  //     console.log("Changing button color to add")
+  //     addToLife()
+  //   }, 2000)
+  //   )
+  // }
   const addToLife = async() => {
     setPullButtonColor("yellow")
     setPullButtonText("Adding")
@@ -73,7 +73,7 @@ const resetText = async() => {
         <div>{addFile}</div>
         <div>{addInput}</div>
         <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
-        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>{pullButtonText}</button>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => addToLife()}>{pullButtonText}</button>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>

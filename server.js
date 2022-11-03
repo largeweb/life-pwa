@@ -136,18 +136,8 @@ app.post('/pull-life', (req, res) => {
 
 app.post('/addtolife', (req, res) => {
 
-	let stuff = "\n" + req.body.stuff
-	let file = req.body.file + ".txt"
-
-	console.log("adding " + stuff + " to " + file);
-	fs.appendFile(process.env.REACT_APP_LIFE_DIR + file, stuff, (err) =>{
-		if(err) throw err;
-		console.log("added " + stuff + " to " + file);
-		console.log("i believe...");
-	})
-	console.log("some is adding something!!");
-	console.log("running cron push");
-	exec('cron-addtolife',
+	console.log("we will try to pull");
+	exec('cron-pull',
    	function (error, stdout, stderr) {
 		console.log('stdout: ' + stdout);
 		console.log('stderr: ' + stderr);
@@ -156,19 +146,43 @@ app.post('/addtolife', (req, res) => {
 		}
 	});
 	console.log("maybe it worked?");
-    setTimeout(function(){
-		console.log("fetching life text")
-		console.log("TRYING TO READ FROM: " + lifePath + file);
-		var array = fs.readFileSync(lifePath + file).toString().split("\n");
-		var returnJson = {}
-		returnJson.lines = []
-		for(i in array) {
-			returnJson.lines.push(array[i]);
-		}
-		console.log("FINISHED JSON:")
-		// console.log(todoJson)
-		res.json(returnJson);
+  setTimeout(function(){
+    console.log("Changing button color to add")
+    let stuff = "\n" + req.body.stuff
+    let file = req.body.file + ".txt"
+
+    console.log("adding " + stuff + " to " + file);
+    fs.appendFile(process.env.REACT_APP_LIFE_DIR + file, stuff, (err) =>{
+      if(err) throw err;
+      console.log("added " + stuff + " to " + file);
+      console.log("i believe...");
+    })
+    console.log("some is adding something!!");
+    console.log("running cron push");
+    exec('cron-addtolife',
+      function (error, stdout, stderr) {
+      console.log('stdout: ' + stdout);
+      console.log('stderr: ' + stderr);
+      if (error !== null) {
+          console.log('exec error: ' + error);
+      }
+    });
+    console.log("maybe it worked?");
+      setTimeout(function(){
+      console.log("fetching life text")
+      console.log("TRYING TO READ FROM: " + lifePath + file);
+      var array = fs.readFileSync(lifePath + file).toString().split("\n");
+      var returnJson = {}
+      returnJson.lines = []
+      for(i in array) {
+        returnJson.lines.push(array[i]+"\n");
+      }
+      console.log("FINISHED JSON:")
+      // console.log(todoJson)
+      res.json(returnJson);
+      }, 2000)
     }, 2000)
+
   }
 )
 
