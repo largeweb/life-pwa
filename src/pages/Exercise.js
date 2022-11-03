@@ -70,7 +70,7 @@ function Exercise() {
         <div><button className='exerciseBtn' hidden={locked=="true"} value={mountainClimbers} onClick={(e) => setMountainClimbers(parseInt(mountainClimbers)+parseInt(5))}>add mountain climbers {mountainClimbers}</button></div>
         <div><button className='exerciseBtn' hidden={locked=="true"} value={flys} onClick={(e) => setFlys(parseInt(flys)+parseInt(10))}>add flys {flys}</button></div>
         {locked=="true"
-        ? <div><button style={{border:"3px solid black", fontSize:"20px", width:"40%", borderRadius:"30%"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode On<br></br>🔒</button></div>
+        ? <div><button style={{border:"3px solid black", fontSize:"18px", width:"40%", borderRadius:"30%", padding:"10px"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode On<br></br>🔒</button></div>
         : <div><button style={{border:"3px solid black", fontSize:"20px", width:"50%", borderRadius:"10%"}} value={locked} onClick={(e) => setLocked(!eval(locked))}>Exercise Mode Off</button></div>
         }
         {locked=="true"
