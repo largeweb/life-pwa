@@ -51,10 +51,10 @@ function Exercise() {
       <Navbar />
       <div className='mainmenu' id="maindiv">
         <h1>EXERCISE 💪</h1>
-        {locked=="true"
+        {/* {locked=="true"
         ? <div />
         : <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
-        }
+        } */}
         <hr></hr>
         {/* <div><div onClick={(e) => setLocked(false)}>add pushups</div></div> */}
 

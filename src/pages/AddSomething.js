@@ -68,7 +68,7 @@ const resetText = async() => {
         {/* <input type="text" style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"100%", height:"200px"}}></input> */}
         <textarea placeholder='Add File' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddFile(e.target.value)} value={addFile}></textarea>
         <textarea placeholder='What to Add' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px"}} onChange={(e) => setAddInput(e.target.value)} value={addInput}></textarea>
-        <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
+        {/* <Link to={'/'}><button className='menubutton' >Back Home</button></Link> */}
         <div>{userInput}</div>
         <div>{addFile}</div>
         <div>{addInput}</div>

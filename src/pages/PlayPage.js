@@ -22,7 +22,7 @@ function PlayPage() {
       <Navbar />
       <div className='mainmenu' id="maindiv">
         <h1>⭕ PLAY ⭕</h1>
-        <Link to={'/'}><button className='menubutton' >Back Home</button></Link>
+        {/* <Link to={'/'}><button className='menubutton' >Back Home</button></Link> */}
         <div>{userInput}</div>
         <Link to={'/tictactoe'}><button className='menubutton' >Tic Tac Toe</button></Link>
       </div>
