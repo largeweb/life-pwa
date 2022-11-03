@@ -72,7 +72,7 @@ function ViewLife() {
       <Navbar />
       <div className='mainmenu' id="maindiv">
         <h1 style={{fontSize:"30px", fontWeight:"700"}}>💻 View 💻</h1>
-        <textarea style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"50px", fontSize:"20px"}} onChange={(e) => setFileInput(e.target.value)} value={fileInput}></textarea>
+        <textarea style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"50px", fontSize:"20px", marginBottom:"-4px"}} onChange={(e) => setFileInput(e.target.value)} value={fileInput}></textarea>
         <div style={{fontSize:"15px"}}>recent:</div>
         <button className='menubuttonhistory' onClick={(e) => setFileInput(recent1)}>{recent1}</button>
         <button className='menubuttonhistory' onClick={(e) => setFileInput(recent2)}>{recent2}</button>
