@@ -21,6 +21,7 @@ function ViewLife() {
   const [fileInput, setFileInput] = useLocalStorage('fileInput', 'summer/todo')
   const [fileText, setFileText] = useState([])
   const [loading, setLoading] = useState(false);
+  const [anyText, setAnyText] = useState(false);
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function ViewLife() {
   }, []);
 
   const fetchLifeText = async () => {
+    setAnyText(true)
     const response = await fetch('http://170.187.159.180:5000/life', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -69,9 +71,14 @@ function ViewLife() {
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>PULL CHANGES</button>
         {/* <Link to={'http://170.187.159.180:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link> */}
         <div>{userInput}</div>
-        <div style={{fontSize:"14px", textAlign:"left", marginBottom:"30px", marginLeft:"-40px", marginRight:"-40px", padding:"2px", backgroundColor:menuBackgroundColor, fontWeight:"700", border:"5px solid gray"}}>
+        {anyText &&
+        // <div style={{fontSize:"14px", textAlign:"left", marginBottom:"30px", marginLeft:"-40px", marginRight:"-40px", padding:"2px", backgroundColor:menuBackgroundColor, fontWeight:"700", border:"5px solid gray"}}>
+        //   {fileText.map(txt => <div>{txt}</div>)}
+        // </div>
+        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"5%", width:"90%", backgroundColor:"lightgray", borderRadius:"1%", border:"3px solid gray"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
+        }
       </div>
       {/* <Footer /> */}
     </div>
