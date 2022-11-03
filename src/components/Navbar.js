@@ -11,7 +11,7 @@ const Navbar = () => {
                               {/* Link */}
                             {/* </a> */}
         <div style={{textAlign: "center", padding: "10px"}}>
-          <Link to={'/Home'}>BACK 🤖</Link>
+          <Link to={'/'}>BACK 🤖</Link>
         </div>
         {/* <a className="navlink" href="/">
                               Link
