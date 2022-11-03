@@ -33,7 +33,7 @@ function ViewLife() {
   }, []);
 
   const fetchLifeText = async () => {
-    if(recent2!=fileInput && recent1!=fileInput) {
+    if(recent1!=fileInput) {
       setRecent2(recent1)
       setRecent1(fileInput)
     }
