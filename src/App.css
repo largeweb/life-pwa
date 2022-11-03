@@ -194,11 +194,11 @@ html {
   top:2%;
   background-color: var(--mainnav-color);
   border-radius: 2%;
-  height: 100px;
+  height: 50px;
   opacity: 0.8;
 }
 
 #maindiv {
   position: relative;
-  top: 120px;
+  top: 70px;
 }

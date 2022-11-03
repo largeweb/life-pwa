@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import {useState, useEffect} from "react"
 
 const Navbar = () => {
@@ -9,7 +10,9 @@ const Navbar = () => {
         {/* <a className="navtext" href= */}
                               {/* Link */}
                             {/* </a> */}
-        <div style={{textAlign: "center", padding: "10px"}}>Link 1🍓 Link 2🌟 Link 3🍌 Link 4🌊 Link 5🏘️ Link 6🎪</div>
+        <div style={{textAlign: "center", padding: "10px"}}>
+          <Link to={'/Home'}>BACK 🤖</Link>
+        </div>
         {/* <a className="navlink" href="/">
                               Link
                             </a> */}
