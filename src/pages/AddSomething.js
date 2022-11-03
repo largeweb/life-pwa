@@ -71,11 +71,11 @@ const resetText = async() => {
         <textarea placeholder='Add File' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"50px", fontSize:"20px"}} onChange={(e) => setAddFile(e.target.value)} value={addFile}></textarea>
         <textarea placeholder='What to Add' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px", fontSize:"20px"}} onChange={(e) => setAddInput(e.target.value)} value={addInput}></textarea>
         {/* <Link to={'/'}><button className='menubutton' >Back Home</button></Link> */}
-        <div>{userInput}</div>
-        <div>{addFile}</div>
+        {/* <div>{userInput}</div> */}
+        {/* <div>{addFile}</div> */}
         {/* <div>{addInput}</div> */}
-        <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => addToLife()}>{pullButtonText}</button>
+        <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"5%", width:"90%", backgroundColor:"lightgray", borderRadius:"2%", border:"3px solid gray"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
