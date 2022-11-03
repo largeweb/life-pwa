@@ -14,7 +14,9 @@ function AddSomething() {
   const buttonColor = "rgb(208, 246, 206)"
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
-  const [addFile, setAddFile] = useLocalStorage('addFilePath', 'school/added')
+  const [recent1, setRecent1] = useLocalStorage('userInput', 'school/abc')
+  const [recent2, setRecent2] = useLocalStorage('userInput', 'school/abc')
+  const [addFile, setAddFile] = useLocalStorage('addFilePath', 'school/abc')
   const [addInput, setAddInput] = useState('')
   const [fileText, setFileText] = useState([])
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
@@ -35,6 +37,8 @@ function AddSomething() {
   //   )
   // }
   const addToLife = async() => {
+    setRecent2(recent1)
+    setRecent1(addFile)
     setAnyText(true)
     setPullButtonColor("yellow")
     setPullButtonText("Adding")
@@ -65,6 +69,14 @@ const resetText = async() => {
 	setAddInput('');
 }
 
+// const chooseRecent = async(num) => {
+//   if(num==1) {
+//     setAddFile(recent1)
+//   } else if (num==2) {
+//     setAddFile()
+//   }
+// }
+
   return (
     <div className="App background">
       <Navbar />
@@ -72,6 +84,8 @@ const resetText = async() => {
         <h1 style={{fontSize:"30px", fontWeight:"700"}}>📋 Add 📋</h1>
         {/* <input type="text" style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"100%", height:"200px"}}></input> */}
         <textarea placeholder='Add File' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"50px", fontSize:"20px"}} onChange={(e) => setAddFile(e.target.value)} value={addFile}></textarea>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => setAddFile(recent1)}>{recent1}</button>
+        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => setAddFile(recent2)}>{recent2}</button>
         <textarea placeholder='What to Add' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px", fontSize:"20px"}} onChange={(e) => setAddInput(e.target.value)} value={addInput}></textarea>
         {/* <Link to={'/'}><button className='menubutton' >Back Home</button></Link> */}
         {/* <div>{userInput}</div> */}
