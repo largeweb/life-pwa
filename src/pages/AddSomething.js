@@ -19,6 +19,7 @@ function AddSomething() {
   const [fileText, setFileText] = useState([])
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
   const [pullButtonText, setPullButtonText] = useState("Add to Life");
+  const [anyText, setAnyText] = useState(false);
 
   // const fetchPullLife = async () => {
   //   setPullButtonColor("pink")
@@ -34,6 +35,7 @@ function AddSomething() {
   //   )
   // }
   const addToLife = async() => {
+    setAnyText(true)
     setPullButtonColor("yellow")
     setPullButtonText("Adding")
     console.log("Will now try to add: {" + addInput + "} to: {" + addFile + "}")
@@ -77,9 +79,11 @@ const resetText = async() => {
         {/* <div>{addInput}</div> */}
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => addToLife()}>{pullButtonText}</button>
         <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
+        {anyText &&
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"5%", width:"90%", backgroundColor:"lightgray", borderRadius:"1%", border:"3px solid gray", padding:"4px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
+        }
       </div>
       {/* <Footer /> */}
     </div>
