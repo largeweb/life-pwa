@@ -76,7 +76,7 @@ const resetText = async() => {
         {/* <div>{addInput}</div> */}
         <button className='menubutton' onClick={(e) => resetText()}>Reset Text</button>
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => addToLife()}>{pullButtonText}</button>
-        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
+        <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px", backgroundColor:"lightgray", borderRadius:"2%", border:"3px solid gray"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
       </div>
