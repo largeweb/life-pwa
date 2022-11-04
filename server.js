@@ -115,9 +115,11 @@ app.get('/todo/', (req, res) => {
   let insidetodo = false
   for(i in array) {
       if (line.includes("=== START OF TODO ==="))  {
+        console.log("Found Start")
         insidetodo = true;
       }
       if (line.includes("=== END OF TODO ==="))  {
+        console.log("Found End")
         insidetodo = false;
       }
       if(insidetodo) {
