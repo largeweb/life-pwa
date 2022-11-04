@@ -114,17 +114,17 @@ app.post('/todo/', (req, res) => {
   returnJson.lines = []
   let insidetodo = false
   for(i in array) {
-      console.log(array[i])
+      // console.log(array[i])
       if (array[i].includes("=== START OF TODO ==="))  {
         console.log("Found Start")
         insidetodo = true;
       }
+      if(insidetodo) {
+        returnJson.lines.push(array[i]);
+      }
       if (array[i].includes("=== END OF TODO ==="))  {
         console.log("Found End")
         insidetodo = false;
-      }
-      if(insidetodo) {
-        returnJson.lines.push(array[i]);
       }
   }
   console.log("FINISHED JSON:")
