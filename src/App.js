@@ -13,6 +13,7 @@ import {Link} from "react-router-dom";
 // import useLocalStorage from "use-local-storage"
 import useLocalStorage from "react-use-localstorage"
 import fs from 'fs'
+import {Helmet} from "react-helmet";
 
 function App() {
 
@@ -20,6 +21,11 @@ function App() {
 
   return (
     <div className="App" id="maindiv">
+      <Helmet>
+        <meta name="viewport" content="initial-scale=1, viewport-fit=cover, width=device-width"></meta>
+        <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+      </Helmet>
       <Navbar />
       <div>
         <div className='mainmenu'>
