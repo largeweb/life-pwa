@@ -32,7 +32,7 @@ function ManageTodo() {
     }, 2000);
   }, []);
 
-  const fetchLifeText = async () => {
+  const fetchTodoText = async () => {
     if(recent1!=fileInput) {
       setRecent2(recent1)
       setRecent1(fileInput)
@@ -53,19 +53,19 @@ function ManageTodo() {
     setFileText(textArr)
   }
 
-  const fetchPullLife = async () => {
-    setPullButtonColor("red")
-    const response = await fetch('http://170.187.159.180:5000/pull-life', {
-      method: 'POST'
-    })
-    .then(
-    setTimeout(function(){
-      console.log("fetching life text")
-      fetchLifeText()
-      setPullButtonColor(buttonColor)
-    }, 2000)
-    )
-  }
+  // const fetchPullLife = async () => {
+  //   setPullButtonColor("red")
+  //   const response = await fetch('http://170.187.159.180:5000/pull-life', {
+  //     method: 'POST'
+  //   })
+  //   .then(
+  //   setTimeout(function(){
+  //     console.log("fetching life text")
+  //     fetchTodoText()
+  //     setPullButtonColor(buttonColor)
+  //   }, 2000)
+  //   )
+  // }
 
   return (
     <div className="App background">
@@ -77,9 +77,9 @@ function ManageTodo() {
         <button className='menubuttonhistory' onClick={(e) => setFileInput(recent1)}>{recent1}</button>
         <button className='menubuttonhistory' onClick={(e) => setFileInput(recent2)}>{recent2}</button>
         <div style={{marginBottom:"5px"}}></div>
-        <button className='menubutton' onClick={(e) => fetchLifeText()} >View File</button>
+        <button className='menubutton' onClick={(e) => fetchTodoText()} >View File</button>
         {/* <Link to={'/'}><button className='menubutton' >Back Home</button></Link> */}
-        <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>PULL CHANGES</button>
+        {/* <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => fetchPullLife()}>PULL CHANGES</button> */}
         {/* <Link to={'http://170.187.159.180:5000/life'}><button className='menubutton' >GO TO LIFE</button></Link> */}
         <div>{userInput}</div>
         {anyText &&
