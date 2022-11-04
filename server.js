@@ -114,6 +114,7 @@ app.post('/todo/', (req, res) => {
   returnJson.lines = []
   let insidetodo = false
   for(i in array) {
+      console.log(i)
       if (i.includes("=== START OF TODO ==="))  {
         console.log("Found Start")
         insidetodo = true;
