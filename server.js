@@ -101,7 +101,7 @@ app.get('/images/current', (req, res) => {
 })
 
 
-app.get('/todo/', (req, res) => {
+app.post('/todo/', (req, res) => {
   const filePath = path.join(lifePath.toString(), req.body.dir);
   console.log(lifePath);
   console.log(req.body.dir);

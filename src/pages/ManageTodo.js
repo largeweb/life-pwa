@@ -39,7 +39,7 @@ function ManageTodo() {
     }
     setAnyText(true)
     const response = await fetch('http://170.187.159.180:5000/todo', {
-      method: 'GET',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ dir: fileInput+".txt" })
     });
