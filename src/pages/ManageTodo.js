@@ -47,6 +47,9 @@ function ManageTodo() {
     let textArr = []
     for(let i = 0; i < data.lines.length; i++) {
       console.log(data.lines[i])
+      if(data.lines[i].includes("=>")) {
+        textArr.push("\n")
+      }
       textArr.push(data.lines[i])
       // textArr.push("["+i+"] "+data.lines[i])
     }
