@@ -45,12 +45,17 @@ function ManageTodo() {
     });
     const data = await response.json();
     let textArr = []
+    let count=0;
     for(let i = 0; i < data.lines.length; i++) {
       console.log(data.lines[i])
       if(data.lines[i].includes("=>")) {
-        textArr.push("\n")
+        // textArr.push("<br></br>")
+        textArr.push("\n\n" + "[" + count + "] " + data.lines[i])
+        count++
+        // textArr.push("<br></br>")
+      } else {
+        textArr.push(data.lines[i])
       }
-      textArr.push(data.lines[i])
       // textArr.push("["+i+"] "+data.lines[i])
     }
     setFileText(textArr)

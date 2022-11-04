@@ -138,6 +138,7 @@ html {
     /* background: black; */
   /* padding: 10px; */
     /* box-shadow: 0 0 7px 3px #ffffff; */
+  white-space: pre-line;
 }
 
 .footer {
