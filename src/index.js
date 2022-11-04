@@ -10,6 +10,7 @@ import AddSomething from './pages/AddSomething';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import ViewLife from './pages/ViewLife';
+import ManageTodo from './pages/ManageTodo';
 import ChangeWallpaper from './pages/ChangeWallpaper';
 import fs from 'fs'
 
@@ -24,6 +25,7 @@ root.render(
         <Route path="/tictactoe" element={<TicTacToe/>} />
         <Route path="/add" element={<AddSomething/>} />
         <Route path="/view" element={<ViewLife/>} />
+        <Route path="/managetodo" element={<ManageTodo/>} />
         <Route path="/changewallpaper" element={<ChangeWallpaper/>} />
       </Routes>
     </BrowserRouter>

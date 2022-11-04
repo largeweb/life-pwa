@@ -101,6 +101,34 @@ app.get('/images/current', (req, res) => {
 })
 
 
+app.get('/todo/', (req, res) => {
+  const filePath = path.join(lifePath.toString(), req.body.dir);
+  console.log(lifePath);
+  console.log(req.body.dir);
+  console.log("READING FROM: " + filePath);
+  res.header('Access-Control-Allow-Methods', 'POST');
+
+  console.log("TRYING TO READ FROM: " + lifePath + req.body.dir);
+  var array = fs.readFileSync(lifePath + req.body.dir).toString().split("\n");
+  var returnJson = {}
+  returnJson.lines = []
+  let insidetodo = false
+  for(i in array) {
+      if (line.includes("=== START OF TODO ==="))  {
+        insidetodo = true;
+      }
+      if (line.includes("=== END OF TODO ==="))  {
+        insidetodo = false;
+      }
+      if(insidetodo) {
+        returnJson.lines.push(array[i]);
+      }
+  }
+  console.log("FINISHED JSON:")
+  // console.log(todoJson)
+  res.json(returnJson);
+})
+
 // 🌟 CHANGE THIS ROUTE ON SERVER 🌟
 app.post('/life/', (req, res) => {
   const filePath = path.join(lifePath.toString(), req.body.dir);
