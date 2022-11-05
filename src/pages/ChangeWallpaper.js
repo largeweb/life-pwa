@@ -11,6 +11,9 @@ import useLocalStorage from "react-use-localstorage"
 import retrogreen from "../images/retro-green.jpg"
 import bluegrid from "../images/blue-grid.jpg"
 import redwave from "../images/red-wave.jpg"
+import colorspace from "../images/color-space.gif"
+import colorcircuit from "../images/color-circuit.jpg"
+import bluecircle from "../images/blue-circle.jpg"
 
 function ChangeWallpaper() {
 
@@ -72,6 +75,9 @@ const resetText = async() => {
         <button className='menubutton' onClick={(e) => changewallpaperfetch('retro-green.jpg')} style={{backgroundImage: `url(${retrogreen})`, backgroundSize:"100px"}}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Retro Green</span></button>
         <button className='menubutton' onClick={(e) => changewallpaperfetch('blue-grid.jpg')} style={{backgroundImage: `url(${bluegrid})`, backgroundSize:"100px"}}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Blue Grid</span></button>
         <button className='menubutton' style={{backgroundImage: `url(${redwave})`, backgroundSize:"100px"}} onClick={(e) => changewallpaperfetch('red-wave.jpg')}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Red Wave</span></button>
+        <button className='menubutton' style={{backgroundImage: `url(${bluecircle})`, backgroundSize:"100px"}} onClick={(e) => changewallpaperfetch('blue-circle.jpg')}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Blue Circle</span></button>
+        <button className='menubutton' style={{backgroundImage: `url(${colorcircuit})`, backgroundSize:"100px"}} onClick={(e) => changewallpaperfetch('color-circuit.jpg')}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Color Circuit</span></button>
+        <button className='menubutton' style={{backgroundImage: `url(${colorspace})`, backgroundSize:"100px"}} onClick={(e) => changewallpaperfetch('color-space.gif')}><span style={{backgroundColor:"white", opacity:"0.5", padding:"5px", fontWeight:"700"}}>Color Space</span></button>
         <div style={{fontSize:"10px", textAlign:"left", marginBottom:"30px", marginLeft:"20px"}}>
           {fileText.map(txt => <div>{txt}</div>)}
         </div>
