@@ -104,7 +104,7 @@ body {
   border-radius: 20%;
   opacity: 25%;
   position: fixed;
-  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
+  /* padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left); */
   left: 35%;
   top: 0;
   right: 0;
@@ -124,8 +124,8 @@ body {
 }
 
 html {
-  min-height: calc(100% + env(safe-area-inset-top));
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  /* min-height: calc(100% + env(safe-area-inset-top)); */
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   /* background-color: var(--background-color); */
   /* border: 30px solid black; */
 
@@ -148,7 +148,7 @@ html {
   background-color: var(--footer-color);
   font-size: 0;
   position: fixed;
-  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
+  /* padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left); */
   bottom: 40px;
   right: 0;
   /* margin-bottom: 10px; */
@@ -207,7 +207,7 @@ html {
 
 #mainnav {
   position:fixed;
-  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
+  /* padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left); */
   left:2%;
   right:2%;
   top:2%;
