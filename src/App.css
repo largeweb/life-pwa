@@ -104,6 +104,7 @@ body {
   border-radius: 20%;
   opacity: 25%;
   position: fixed;
+  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
   left: 35%;
   top: 0;
   right: 0;
@@ -147,13 +148,14 @@ html {
   background-color: var(--footer-color);
   font-size: 0;
   position: fixed;
+  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
   bottom: 40px;
   right: 0;
   /* margin-bottom: 10px; */
   /* background-color: purple; */
   border-radius: 10%;
   opacity: 30%;
-  position: fixed;
+  /* position: fixed; */
   left: 35%;
   /* margin-top: 10px; */
   width: 30%;
@@ -205,6 +207,7 @@ html {
 
 #mainnav {
   position:fixed;
+  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
   left:2%;
   right:2%;
   top:2%;
