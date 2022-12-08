@@ -82,6 +82,7 @@ app.post('/pull-life', (req, res) => {
 
 app.post('/addtolife', (req, res) => {
 
+        res.json("server received request of adding: " + req.body.stuff);
 	let stuff = "\n" + req.body.stuff
 	let file = req.body.file + ".txt"
 
@@ -102,19 +103,19 @@ app.post('/addtolife', (req, res) => {
 		}
 	});
 	console.log("maybe it worked?");
-    setTimeout(function(){
-		console.log("fetching life text")
-		console.log("TRYING TO READ FROM: " + lifePath + file);
-		var array = fs.readFileSync(lifePath + file).toString().split("\n");
-		var returnJson = {}
-		returnJson.lines = []
-		for(i in array) {
-			returnJson.lines.push(array[i]);
-		}
-		console.log("FINISHED JSON:")
-		// console.log(todoJson)
-		res.json(returnJson);
-    }, 2000)
+    // setTimeout(function(){
+    //     	console.log("fetching life text")
+    //     	console.log("TRYING TO READ FROM: " + lifePath + file);
+    //     	var array = fs.readFileSync(lifePath + file).toString().split("\n");
+    //     	var returnJson = {}
+    //     	returnJson.lines = []
+    //     	for(i in array) {
+    //     		returnJson.lines.push(array[i]);
+    //     	}
+    //     	console.log("FINISHED JSON:")
+    //     	// console.log(todoJson)
+    //     	res.json(returnJson);
+    // }, 2000)
   }
 )
 
