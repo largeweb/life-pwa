@@ -77,6 +77,9 @@ function AddSomething() {
         // textArr.push("["+i+"] "+data.lines[i])
         textArr.push(data.lines[i])
       }
+      setFileText(textArr)
+      setPullButtonColor(green)
+      setPullButtonText("DONE??")
     }, 3000)
   }
 
