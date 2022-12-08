@@ -65,12 +65,12 @@ function AddSomething() {
       // console.log("Changing button color back")
       // setPullButtonColor(buttonColor)
       // setPullButtonText("Add to Life")
-      response = await fetch('http://170.187.159.180:5000/viewadded', {
+      response2 = await fetch('http://170.187.159.180:5000/viewadded', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ file: addFile })
       });
-      data = await response.json();
+      data = await response2.json();
       textArr = []
       for(let i = 0; i < data.lines.length; i++) {
         console.log(data.lines[i])
