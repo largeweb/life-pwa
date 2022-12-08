@@ -236,7 +236,7 @@ app.post('/viewadded/', (req, res) => {
   console.log("FINISHED JSON:")
   // console.log(todoJson)
   res.json(returnJson);
-  }, 2000)
+  }, 3000)
 })
 
 // app.post('/added/', (req, res) => {
