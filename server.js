@@ -167,7 +167,8 @@ app.post('/pull-life', (req, res) => {
 
 app.post('/addtolife', (req, res) => {
 
-	res.json({"server is trying to add: " + req.body.stuff});
+  // stringtoadd = req.body.stuff.toString()
+	res.json({"server is trying to info":"success"});
 	console.log("we will try to pull");
 	exec('cron-pull',
    	function (error, stdout, stderr) {
