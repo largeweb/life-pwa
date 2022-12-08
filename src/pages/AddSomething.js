@@ -78,7 +78,7 @@ function AddSomething() {
         textArr.push(data.lines[i])
       }
       setFileText(textArr)
-      setPullButtonColor(green)
+      setPullButtonColor(buttonColor)
       setPullButtonText("DONE??")
     }, 3000)
   }
