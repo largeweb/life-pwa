@@ -61,11 +61,21 @@ function AddSomething() {
     setFileText(textArr)
     setPullButtonColor(buttonColor)
     setPullButtonText("Add to Life")
-    // setTimeout(function(){
-    //   console.log("Changing button color back")
-    //   setPullButtonColor(buttonColor)
-    //   setPullButtonText("Add to Life")
-    // }, 2000)
+    setTimeout(async function(){
+      // console.log("Changing button color back")
+      // setPullButtonColor(buttonColor)
+      // setPullButtonText("Add to Life")
+      response = await fetch('http://170.187.159.180:5000/viewadded', {
+        method: 'GET'
+      });
+      data = await response.json();
+      let textArr = []
+      for(let i = 0; i < data.lines.length; i++) {
+        console.log(data.lines[i])
+        // textArr.push("["+i+"] "+data.lines[i])
+        textArr.push(data.lines[i])
+      }
+    }, 2000)
   }
 
 const resetText = async() => {
