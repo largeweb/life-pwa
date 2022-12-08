@@ -167,7 +167,7 @@ app.post('/pull-life', (req, res) => {
 
 app.post('/addtolife', (req, res) => {
 
-	res.json("server is trying to add: " + req.body.stuff);
+	res.json({"server is trying to add: " + req.body.stuff});
 	console.log("we will try to pull");
 	exec('cron-pull',
    	function (error, stdout, stderr) {
@@ -186,8 +186,6 @@ app.post('/addtolife', (req, res) => {
     console.log("adding " + stuff + " to " + file);
     fs.appendFile(process.env.REACT_APP_LIFE_DIR + file, stuff, (err) =>{
       if(err) throw err;
-      console.log("added " + stuff + " to " + file);
-      console.log("i believe...");
     })
     console.log("some is adding something!!");
     console.log("running cron push");
