@@ -211,7 +211,7 @@ app.post('/addtolife', (req, res) => {
     //   // console.log(todoJson)
     //   res.json(returnJson);
     //   }, 2000)
-    // }, 2000)
+    }, 2000)
 
   }
 )
