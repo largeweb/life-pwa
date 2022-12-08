@@ -61,7 +61,7 @@ function AddSomething() {
     setFileText(textArr)
     setPullButtonColor(buttonColor)
     setPullButtonText("Add to Life")
-    setTimeout(async function(){
+    // setTimeout(async function(){
       // console.log("Changing button color back")
       // setPullButtonColor(buttonColor)
       // setPullButtonText("Add to Life")
@@ -71,7 +71,7 @@ function AddSomething() {
         body: JSON.stringify({ file: addFile })
       });
       data = await response.json();
-      let textArr = []
+      textArr = []
       for(let i = 0; i < data.lines.length; i++) {
         console.log(data.lines[i])
         // textArr.push("["+i+"] "+data.lines[i])
@@ -80,7 +80,7 @@ function AddSomething() {
       setFileText(textArr)
       setPullButtonColor(buttonColor)
       setPullButtonText("DONE??")
-    }, 3000)
+    // }, 3000)
   }
 
 const resetText = async() => {
