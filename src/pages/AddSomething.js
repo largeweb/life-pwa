@@ -77,7 +77,7 @@ function AddSomething() {
         // textArr.push("["+i+"] "+data.lines[i])
         textArr.push(data.lines[i])
       }
-    }, 2000)
+    }, 3000)
   }
 
 const resetText = async() => {
