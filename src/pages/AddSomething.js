@@ -70,12 +70,12 @@ function AddSomething() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ file: addFile })
       });
-      data = await response2.json();
+      const data2 = await response2.json();
       textArr = []
-      for(let i = 0; i < data.lines.length; i++) {
-        console.log(data.lines[i])
+      for(let i = 0; i < data2.lines.length; i++) {
+        console.log(data2.lines[i])
         // textArr.push("["+i+"] "+data.lines[i])
-        textArr.push(data.lines[i])
+        textArr.push(data2.lines[i])
       }
       setFileText(textArr)
       setPullButtonColor(buttonColor)
