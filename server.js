@@ -220,8 +220,9 @@ app.post('/addtolife', (req, res) => {
   }
 )
 
-app.get('/viewadded/', (req, res) => {
+app.post('/viewadded/', (req, res) => {
 
+  let file = req.body.file + ".txt"
   console.log("testing sending view lief added")
   // setTimeout(function(){
   console.log("fetching life text")

@@ -66,7 +66,9 @@ function AddSomething() {
       // setPullButtonColor(buttonColor)
       // setPullButtonText("Add to Life")
       response = await fetch('http://170.187.159.180:5000/viewadded', {
-        method: 'GET'
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ file: addFile })
       });
       data = await response.json();
       let textArr = []
