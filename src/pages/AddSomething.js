@@ -65,7 +65,7 @@ function AddSomething() {
       // console.log("Changing button color back")
       // setPullButtonColor(buttonColor)
       // setPullButtonText("Add to Life")
-      response2 = await fetch('http://170.187.159.180:5000/viewadded', {
+      const response2 = await fetch('http://170.187.159.180:5000/viewadded', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ file: addFile })
