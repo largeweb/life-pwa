@@ -167,6 +167,7 @@ app.post('/pull-life', (req, res) => {
 
 app.post('/addtolife', (req, res) => {
 
+	res.json("server is trying to add: " + req.body.stuff);
 	console.log("we will try to pull");
 	exec('cron-pull',
    	function (error, stdout, stderr) {
@@ -198,21 +199,21 @@ app.post('/addtolife', (req, res) => {
           console.log('exec error: ' + error);
       }
     });
-    console.log("maybe it worked?");
-      setTimeout(function(){
-      console.log("fetching life text")
-      console.log("TRYING TO READ FROM: " + lifePath + file);
-      var array = fs.readFileSync(lifePath + file).toString().split("\n");
-      var returnJson = {}
-      returnJson.lines = []
-      for(i in array) {
-        returnJson.lines.push(array[i]+"\n");
-      }
-      console.log("FINISHED JSON:")
-      // console.log(todoJson)
-      res.json(returnJson);
-      }, 2000)
-    }, 2000)
+    // console.log("maybe it worked?");
+    //   setTimeout(function(){
+    //   console.log("fetching life text")
+    //   console.log("TRYING TO READ FROM: " + lifePath + file);
+    //   var array = fs.readFileSync(lifePath + file).toString().split("\n");
+    //   var returnJson = {}
+    //   returnJson.lines = []
+    //   for(i in array) {
+    //     returnJson.lines.push(array[i]+"\n");
+    //   }
+    //   console.log("FINISHED JSON:")
+    //   // console.log(todoJson)
+    //   res.json(returnJson);
+    //   }, 2000)
+    // }, 2000)
 
   }
 )
