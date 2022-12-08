@@ -12,6 +12,7 @@ import useLocalStorage from "react-use-localstorage"
 function AddSomething() {
 
   const buttonColor = "rgb(208, 246, 206)"
+  const buttonColor2 = "#39ff14"
 
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [recent1, setRecent1] = useLocalStorage('recent1', 'school/abc')
@@ -59,8 +60,8 @@ function AddSomething() {
       textArr.push(data.lines[i])
     }
     setFileText(textArr)
-    setPullButtonColor(buttonColor)
-    setPullButtonText("Add to Life")
+    setPullButtonColor(buttonColor2)
+    setPullButtonText("Request Received")
     // setTimeout(async function(){
       // console.log("Changing button color back")
       // setPullButtonColor(buttonColor)
@@ -79,7 +80,7 @@ function AddSomething() {
       }
       setFileText(textArr)
       setPullButtonColor(buttonColor)
-      setPullButtonText("DONE??")
+      setPullButtonText("Add More?")
     // }, 3000)
   }
 
