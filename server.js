@@ -224,7 +224,7 @@ app.post('/viewadded/', (req, res) => {
 
   let file = req.body.file + ".txt"
   console.log("testing sending view lief added")
-  // setTimeout(function(){
+  setTimeout(function(){
   console.log("fetching life text")
   console.log("TRYING TO READ FROM: " + lifePath + file);
   var array = fs.readFileSync(lifePath + file).toString().split("\n");
@@ -236,7 +236,7 @@ app.post('/viewadded/', (req, res) => {
   console.log("FINISHED JSON:")
   // console.log(todoJson)
   res.json(returnJson);
-  // }, 2000)
+  }, 2000)
 })
 
 // app.post('/added/', (req, res) => {
