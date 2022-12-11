@@ -44,6 +44,7 @@ function App() {
           {userInput === "life" && <Link to={'/view'}><button className='menubutton'>View Life</button></Link> }
           {userInput === "life" && <Link to={'/managetodo'}><button className='menubutton'>Manage Todo</button></Link> }
           {userInput === "life" && <Link to={'/add'}><button className='menubutton'>Add Something</button></Link> }
+          <Link to={'/generate'}><button className='menubutton'>Generate</button></Link>
           <Link to={'/play'}><button className='menubutton'>Play Area</button></Link>
           <Link to={'/exercise'}><button className='menubutton'>Exercise</button></Link>
           <Link to={'/changewallpaper'}><button className='menubutton'>Change Wallpaper</button></Link>

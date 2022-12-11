@@ -12,6 +12,7 @@ import reportWebVitals from './reportWebVitals';
 import ViewLife from './pages/ViewLife';
 import ManageTodo from './pages/ManageTodo';
 import ChangeWallpaper from './pages/ChangeWallpaper';
+import GeneratePage from './pages/GeneratePage';
 import fs from 'fs'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,6 +28,7 @@ root.render(
         <Route path="/view" element={<ViewLife/>} />
         <Route path="/managetodo" element={<ManageTodo/>} />
         <Route path="/changewallpaper" element={<ChangeWallpaper/>} />
+        <Route path="/generate" element={<GeneratePage/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
