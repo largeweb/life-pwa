@@ -165,6 +165,19 @@ app.post('/pull-life', (req, res) => {
 	console.log("maybe it worked?");
 })
 
+app.post('/generate', (req, res) => {
+	console.log("we will try to pull");
+	exec('cron-pull',
+   	function (error, stdout, stderr) {
+		console.log('stdout: ' + stdout);
+		console.log('stderr: ' + stderr);
+		if (error !== null) {
+		     console.log('exec error: ' + error);
+		}
+	});
+	console.log("maybe it worked?");
+})
+
 app.post('/addtolife', (req, res) => {
 
         // stringtoadd = req.body.stuff.toString()

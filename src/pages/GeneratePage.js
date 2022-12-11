@@ -17,26 +17,29 @@ function GeneratePage() {
   const [userInput, setUserInput] = useLocalStorage('userInput', 'empty')
   const [recent1, setRecent1] = useLocalStorage('recent1', 'school/abc')
   const [recent2, setRecent2] = useLocalStorage('recent2', 'school/abc')
+  const [endPrompt, setEndPrompt] = useLocalStorage('endprompt', '1:')
+  const [prompt, setPrompt] = useLocalStorage('prompt', 'generate more todos from:')
   const [addFile, setAddFile] = useLocalStorage('addFilePath', 'school/abc')
+  const [genResponse, setGenResponse] = useState('genResponse', '')
   const [addInput, setAddInput] = useState('')
   const [fileText, setFileText] = useState([])
   const [pullButtonColor, setPullButtonColor] = useState(buttonColor);
   const [pullButtonText, setPullButtonText] = useState("Add to Life");
   const [anyText, setAnyText] = useState(false);
 
-  // const fetchPullLife = async () => {
-  //   setPullButtonColor("pink")
-  //   setPullButtonText("Pulling Life...")
-  //   const response = await fetch('http://170.187.159.180:5000/pull-life', {
-  //     method: 'POST'
-  //   })
-  //   .then(
-  //   setTimeout(function(){
-  //     console.log("Changing button color to add")
-  //     addToLife()
-  //   }, 2000)
-  //   )
-  // }
+  const fetchGenerate = async () => {
+    setPullButtonColor("pink")
+    setPullButtonText("Generating...")
+    const response = await fetch('http://170.187.159.180:5000/generate', {
+      method: 'POST'
+    })
+    .then(
+    setTimeout(function(){
+      console.log("Changing button color to add")
+      addToLife()
+    }, 2000)
+    )
+  }
   const addToLife = async() => {
     if(recent1!=addFile) {
       setRecent2(recent1)
@@ -100,12 +103,13 @@ const resetText = async() => {
     <div className="App background">
       <Navbar />
       <div className='mainmenu' id="maindiv">
-        <h1 style={{fontSize:"30px", fontWeight:"700"}}>📋 Add 📋</h1>
+        <h1 style={{fontSize:"30px", fontWeight:"700"}}>📋 Generate 📋</h1>
         {/* <input type="text" style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"100%", height:"200px"}}></input> */}
-        <textarea placeholder='Add File' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"50px", fontSize:"20px"}} onChange={(e) => setAddFile(e.target.value)} value={addFile}></textarea>
+        <textarea placeholder='Prompt?' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px", fontSize:"20px"}} onChange={(e) => setAddInput(e.target.value)} value={prompt}></textarea>
+        <textarea placeholder='File' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"50px", fontSize:"20px"}} onChange={(e) => setAddFile(e.target.value)} value={addFile}></textarea>
         {/* <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => setAddFile(recent1)}>{recent1}</button>
         <button className='menubutton' style={{backgroundColor: pullButtonColor}} onClick={(e) => setAddFile(recent2)}>{recent2}</button> */}
-        <textarea placeholder='What to Add' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px", fontSize:"20px"}} onChange={(e) => setAddInput(e.target.value)} value={addInput}></textarea>
+        <textarea placeholder='End Prompt?' style={{margin:"5px", border:"5px solid gray", borderRadius:"10%", width:"90%", height:"200px", fontSize:"20px"}} onChange={(e) => setAddInput(e.target.value)} value={endPrompt}></textarea>
         {/* <Link to={'/'}><button className='menubutton' >Back Home</button></Link> */}
         {/* <div>{userInput}</div> */}
         {/* <div>{addFile}</div> */}
